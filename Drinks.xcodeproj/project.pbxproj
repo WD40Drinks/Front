@@ -14,6 +14,9 @@
 		A730C84C28E1EA43007A2097 /* DrinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A730C84B28E1EA43007A2097 /* DrinksTests.swift */; };
 		A730C85628E1EA43007A2097 /* DrinksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A730C85528E1EA43007A2097 /* DrinksUITests.swift */; };
 		A730C85828E1EA43007A2097 /* DrinksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A730C85728E1EA43007A2097 /* DrinksUITestsLaunchTests.swift */; };
+		A730C86528E1EA98007A2097 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A730C86428E1EA98007A2097 /* .gitignore */; };
+		A730C86728E1EAA8007A2097 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A730C86628E1EAA8007A2097 /* README.md */; };
+		A730C86928E1EABC007A2097 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A730C86828E1EABC007A2097 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		A730C85128E1EA43007A2097 /* DrinksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A730C85528E1EA43007A2097 /* DrinksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksUITests.swift; sourceTree = "<group>"; };
 		A730C85728E1EA43007A2097 /* DrinksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A730C86428E1EA98007A2097 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A730C86628E1EAA8007A2097 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A730C86828E1EABC007A2097 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,9 @@
 		A730C82E28E1EA41007A2097 = {
 			isa = PBXGroup;
 			children = (
+				A730C86628E1EAA8007A2097 /* README.md */,
+				A730C86428E1EA98007A2097 /* .gitignore */,
+				A730C86828E1EABC007A2097 /* .swiftlint.yml */,
 				A730C83928E1EA41007A2097 /* Drinks */,
 				A730C84A28E1EA43007A2097 /* DrinksTests */,
 				A730C85428E1EA43007A2097 /* DrinksUITests */,
@@ -137,6 +146,7 @@
 				A730C83328E1EA41007A2097 /* Sources */,
 				A730C83428E1EA41007A2097 /* Frameworks */,
 				A730C83528E1EA41007A2097 /* Resources */,
+				A730C86A28E1EC34007A2097 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -231,7 +241,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A730C86928E1EABC007A2097 /* .swiftlint.yml in Resources */,
 				A730C84228E1EA43007A2097 /* Preview Assets.xcassets in Resources */,
+				A730C86528E1EA98007A2097 /* .gitignore in Resources */,
+				A730C86728E1EAA8007A2097 /* README.md in Resources */,
 				A730C83F28E1EA43007A2097 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +264,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A730C86A28E1EC34007A2097 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A730C83328E1EA41007A2097 /* Sources */ = {
