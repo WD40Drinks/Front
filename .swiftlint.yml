@@ -8,4 +8,6 @@ excluded:
 - SwiftLint/Common/3rdPartyLib
 identifier_name:
   min_length: 1
+line_length:
+  ignores_comments: true
 reporter: "xcode"
