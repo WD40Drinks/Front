@@ -20,6 +20,8 @@
 		A730C86528E1EA98007A2097 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A730C86428E1EA98007A2097 /* .gitignore */; };
 		A730C86728E1EAA8007A2097 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A730C86628E1EAA8007A2097 /* README.md */; };
 		A730C86928E1EABC007A2097 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A730C86828E1EABC007A2097 /* .swiftlint.yml */; };
+		A7A8D2C728EEFC00003AB3F3 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8D2C628EEFC00003AB3F3 /* ImageHandler.swift */; };
+		A7A8D2CB28EEFD32003AB3F3 /* MockImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8D2CA28EEFD32003AB3F3 /* MockImageHandler.swift */; };
 		A7B1AD5A28E5BD4A004B06C0 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1AD5928E5BD4A004B06C0 /* GameFactory.swift */; };
 		A7B1AD5D28E5C102004B06C0 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1AD5C28E5C102004B06C0 /* Collection.swift */; };
 		A7B1AD5F28E5C39A004B06C0 /* MockGameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1AD5E28E5C39A004B06C0 /* MockGameFactory.swift */; };
@@ -59,6 +61,8 @@
 		A730C86428E1EA98007A2097 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A730C86628E1EAA8007A2097 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A730C86828E1EABC007A2097 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		A7A8D2C628EEFC00003AB3F3 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
+		A7A8D2CA28EEFD32003AB3F3 /* MockImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageHandler.swift; sourceTree = "<group>"; };
 		A7B1AD5928E5BD4A004B06C0 /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
 		A7B1AD5C28E5C102004B06C0 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		A7B1AD5E28E5C39A004B06C0 /* MockGameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGameFactory.swift; sourceTree = "<group>"; };
@@ -92,9 +96,9 @@
 		A7029D1428E4749400FBFF32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A7A8D2C928EEFD1F003AB3F3 /* ImageHandler */,
+				A7A8D2C828EEFD14003AB3F3 /* GameFactory */,
 				A7029D1628E474CC00FBFF32 /* Game.swift */,
-				A7B1AD5928E5BD4A004B06C0 /* GameFactory.swift */,
-				A7B1AD5E28E5C39A004B06C0 /* MockGameFactory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +180,24 @@
 				A730C85728E1EA43007A2097 /* DrinksUITestsLaunchTests.swift */,
 			);
 			path = DrinksUITests;
+			sourceTree = "<group>";
+		};
+		A7A8D2C828EEFD14003AB3F3 /* GameFactory */ = {
+			isa = PBXGroup;
+			children = (
+				A7B1AD5928E5BD4A004B06C0 /* GameFactory.swift */,
+				A7B1AD5E28E5C39A004B06C0 /* MockGameFactory.swift */,
+			);
+			path = GameFactory;
+			sourceTree = "<group>";
+		};
+		A7A8D2C928EEFD1F003AB3F3 /* ImageHandler */ = {
+			isa = PBXGroup;
+			children = (
+				A7A8D2C628EEFC00003AB3F3 /* ImageHandler.swift */,
+				A7A8D2CA28EEFD32003AB3F3 /* MockImageHandler.swift */,
+			);
+			path = ImageHandler;
 			sourceTree = "<group>";
 		};
 		A7B1AD5B28E5C09A004B06C0 /* Util */ = {
@@ -345,9 +367,11 @@
 				A7029D1C28E4772600FBFF32 /* ContentViewModel.swift in Sources */,
 				A730C83D28E1EA41007A2097 /* ContentView.swift in Sources */,
 				A7029D1728E474CC00FBFF32 /* Game.swift in Sources */,
+				A7A8D2CB28EEFD32003AB3F3 /* MockImageHandler.swift in Sources */,
 				A7B1AD5D28E5C102004B06C0 /* Collection.swift in Sources */,
 				A730C83B28E1EA41007A2097 /* DrinksApp.swift in Sources */,
 				A7B1AD5F28E5C39A004B06C0 /* MockGameFactory.swift in Sources */,
+				A7A8D2C728EEFC00003AB3F3 /* ImageHandler.swift in Sources */,
 				A7B1AD5A28E5BD4A004B06C0 /* GameFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

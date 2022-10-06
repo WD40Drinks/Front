@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var viewModel = ViewModel()
+    @ObservedObject private var viewModel = ContentViewModel<MockGameFactory, MockImageHandler>()
 
     var body: some View {
         switch viewModel.state {
@@ -24,9 +24,22 @@ struct ContentView: View {
                 .foregroundColor(.gray)
                 .font(.title3)
             Spacer()
-            Text(game.rules)
-                .font(.body)
+            HStack {
+                if let image = viewModel.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } else {
+                    ProgressView()
+                }
+            }
+            .frame(width: 300, height: 200)
             Spacer()
+            if let rules = game.rules {
+                Text(rules)
+                    .font(.body)
+                Spacer()
+            }
             HStack {
                 Spacer()
                 Button(action: {
