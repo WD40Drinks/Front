@@ -1,10 +1,19 @@
 import SwiftUI
 
 class ContentViewModel<Factory: GameFactory, Handler: ImageHandler>: ObservableObject {
-    @Published var state: State = .loading
+    enum State {
+        case loading
+        case error
+        case loaded(Factory, Game)
+    }
+
+    @Published var state: State
     @Published var image: UIImage?
+    private let imageHandler: Handler
 
     init() {
+        self.state = .loading
+        self.imageHandler = Handler()
         createFactory()
     }
 
@@ -54,9 +63,9 @@ class ContentViewModel<Factory: GameFactory, Handler: ImageHandler>: ObservableO
             self.image = nil
         }
 
-        let handler = Handler(name: game.imageName)
+        let handler = Handler()
         Task {
-            let image = await handler.getImage()
+            let image = await handler.getImage(name: game.imageName)
             DispatchQueue.main.async {
                 self.image = image
             }
@@ -67,11 +76,5 @@ class ContentViewModel<Factory: GameFactory, Handler: ImageHandler>: ObservableO
         DispatchQueue.main.async {
             self.state = state
         }
-    }
-
-    enum State {
-        case loading
-        case error
-        case loaded(Factory, Game)
     }
 }
