@@ -1,20 +1,44 @@
 [
     {
-        "name": "Buffalo Bill",
-        "text": "Faz barulho passa pra um lado, se fizer outro pro outro. Errou bebeu bora lá.",
-        "imageName": "buffalo",
-        "rules": "a intenção é falar o Búfalo bill sem mostrar os dentes e vai passando pra sua esquerda sempre... se alguém falar Irá inverte a ordem e fica passando pra pessoa da esquerda isso sempre sem mostrar os dentes quem mostrar ou erra a ordem bebe 1 gole"
+        "pt": {
+            "name": "Buffalo Bill",
+            "text": "Faz barulho passa pra um lado, se fizer outro pro outro. Errou bebeu bora lá.",
+            "imageName": "buffalo",
+            "rules": "a intenção é falar o Búfalo bill sem mostrar os dentes e vai passando pra sua esquerda sempre... se alguém falar Irá inverte a ordem e fica passando pra pessoa da esquerda isso sempre sem mostrar os dentes quem mostrar ou erra a ordem bebe 1 gole"
+        },
+        "en": {
+            "name": "Buffalo Bill",
+            "text": "Make noise goes to the side, another noise other side. Got wrong brink let's q let's",
+            "imageName": "buffalo",
+            "rules": "the intention is to speak the buffalo bill without showing the white teeth and goes passing ira inverts the orders so on lets go"
+        }
     },
     {
-        "name": "Jogo 2",
-        "text": "Faz barulho passa pra um lado, se fizer outro pro outro. Errou bebeu bora lá.",
-        "imageName": "wolf",
-        "rules": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        "pt": {
+            "name": "Verdade ou Desafio",
+            "text": "Será que chegou o momento de se expor.",
+            "imageName": "wolf",
+            "rules": "Aqui vão as regras de verdade ou desafio em português. Espero que ninguém leia essa bobagem toda que to escrevendo, mas o texto tem que ser meio longo então vou dar uma esticada aqui pra testar a tela."
+        },
+        "en": {
+            "name": "Truth or Dare",
+            "text": "Little funny text goes here.",
+            "imageName": "wolf",
+            "rules": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        }
     },
     {
-        "name": "Jogo 3",
-        "text": "Faz barulho passa pra um lado, se fizer outro pro outro. Errou bebeu bora lá.",
-        "imageName": "glass",
-        "rules": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.."
+        "pt": {
+            "name": "Eu nunca",
+            "text": "Faz barulho passa pra um lado, se fizer outro pro outro. Errou bebeu bora lá.",
+            "imageName": "glass",
+            "rules": "Aqui vão as regras de eu nunca em português. Espero que ninguém leia essa bobagem toda que to escrevendo, mas o texto tem que ser meio longo então vou dar uma esticada aqui pra testar a tela. Todo mundo sabe jogar esse negócio."
+        },
+        "en": {
+            "name": "Never have I ever",
+            "text": "Little funny text goes here. Maybe a little longer than little.",
+            "imageName": "glass",
+            "rules": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters."
+        }
     }
 ]
