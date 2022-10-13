@@ -20,7 +20,7 @@ struct ContentView: View {
                 .font(.title)
                 .fontWeight(.bold)
             Spacer()
-            Text(game.text)
+            Text(game.text ?? "")
                 .foregroundColor(.gray)
                 .font(.title3)
             Spacer()
