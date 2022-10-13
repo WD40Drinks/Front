@@ -34,7 +34,7 @@ class MockGameFactory: GameFactory {
             throw GameFactoryError.emptyGameSource
         }
 
-        let languageIdentifier = Language.preferredLanguage().rawValue
+        let languageIdentifier = Locale.current.twoCharacterId
         return games.compactMap { $0[languageIdentifier] }
     }
 }
