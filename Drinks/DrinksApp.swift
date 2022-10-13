@@ -1,10 +1,3 @@
-//
-//  DrinksApp.swift
-//  Drinks
-//
-//  Created by Leonardo de Sousa Rodrigues on 26/09/22.
-//
-
 import SwiftUI
 
 @main

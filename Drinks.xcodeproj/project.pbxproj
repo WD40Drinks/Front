@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7029D1728E474CC00FBFF32 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7029D1628E474CC00FBFF32 /* Game.swift */; };
+		A7029D1A28E4757400FBFF32 /* Games.json in Resources */ = {isa = PBXBuildFile; fileRef = A7029D1928E4757400FBFF32 /* Games.json */; };
+		A7029D1C28E4772600FBFF32 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7029D1B28E4772600FBFF32 /* ContentViewModel.swift */; };
+		A71E224428F4408C00A03382 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71E224328F4408C00A03382 /* Language.swift */; };
 		A730C83B28E1EA41007A2097 /* DrinksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A730C83A28E1EA41007A2097 /* DrinksApp.swift */; };
 		A730C83D28E1EA41007A2097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A730C83C28E1EA41007A2097 /* ContentView.swift */; };
 		A730C83F28E1EA43007A2097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A730C83E28E1EA43007A2097 /* Assets.xcassets */; };
@@ -17,6 +21,11 @@
 		A730C86528E1EA98007A2097 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A730C86428E1EA98007A2097 /* .gitignore */; };
 		A730C86728E1EAA8007A2097 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A730C86628E1EAA8007A2097 /* README.md */; };
 		A730C86928E1EABC007A2097 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A730C86828E1EABC007A2097 /* .swiftlint.yml */; };
+		A7A8D2C728EEFC00003AB3F3 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8D2C628EEFC00003AB3F3 /* ImageHandler.swift */; };
+		A7A8D2CB28EEFD32003AB3F3 /* MockImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8D2CA28EEFD32003AB3F3 /* MockImageHandler.swift */; };
+		A7B1AD5A28E5BD4A004B06C0 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1AD5928E5BD4A004B06C0 /* GameFactory.swift */; };
+		A7B1AD5D28E5C102004B06C0 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1AD5C28E5C102004B06C0 /* Collection.swift */; };
+		A7B1AD5F28E5C39A004B06C0 /* MockGameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1AD5E28E5C39A004B06C0 /* MockGameFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7029D1628E474CC00FBFF32 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		A7029D1928E4757400FBFF32 /* Games.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Games.json; sourceTree = "<group>"; };
+		A7029D1B28E4772600FBFF32 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		A71E224328F4408C00A03382 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		A730C83728E1EA41007A2097 /* Drinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A730C83A28E1EA41007A2097 /* DrinksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksApp.swift; sourceTree = "<group>"; };
 		A730C83C28E1EA41007A2097 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +63,11 @@
 		A730C86428E1EA98007A2097 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A730C86628E1EAA8007A2097 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A730C86828E1EABC007A2097 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		A7A8D2C628EEFC00003AB3F3 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
+		A7A8D2CA28EEFD32003AB3F3 /* MockImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageHandler.swift; sourceTree = "<group>"; };
+		A7B1AD5928E5BD4A004B06C0 /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
+		A7B1AD5C28E5C102004B06C0 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		A7B1AD5E28E5C39A004B06C0 /* MockGameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGameFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +95,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7029D1428E4749400FBFF32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7A8D2C928EEFD1F003AB3F3 /* ImageHandler */,
+				A7A8D2C828EEFD14003AB3F3 /* GameFactory */,
+				A7029D1628E474CC00FBFF32 /* Game.swift */,
+				A71E224328F4408C00A03382 /* Language.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A7029D1528E474AB00FBFF32 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A730C83C28E1EA41007A2097 /* ContentView.swift */,
+				A7029D1B28E4772600FBFF32 /* ContentViewModel.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A7029D1828E4752800FBFF32 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				A7029D1928E4757400FBFF32 /* Games.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		A730C82E28E1EA41007A2097 = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				A730C83A28E1EA41007A2097 /* DrinksApp.swift */,
-				A730C83C28E1EA41007A2097 /* ContentView.swift */,
+				A7029D1828E4752800FBFF32 /* Mock */,
+				A7029D1528E474AB00FBFF32 /* Scenes */,
+				A7029D1428E4749400FBFF32 /* Model */,
+				A7B1AD5B28E5C09A004B06C0 /* Util */,
 				A730C83E28E1EA43007A2097 /* Assets.xcassets */,
 				A730C84028E1EA43007A2097 /* Preview Content */,
 			);
@@ -134,6 +183,32 @@
 				A730C85728E1EA43007A2097 /* DrinksUITestsLaunchTests.swift */,
 			);
 			path = DrinksUITests;
+			sourceTree = "<group>";
+		};
+		A7A8D2C828EEFD14003AB3F3 /* GameFactory */ = {
+			isa = PBXGroup;
+			children = (
+				A7B1AD5928E5BD4A004B06C0 /* GameFactory.swift */,
+				A7B1AD5E28E5C39A004B06C0 /* MockGameFactory.swift */,
+			);
+			path = GameFactory;
+			sourceTree = "<group>";
+		};
+		A7A8D2C928EEFD1F003AB3F3 /* ImageHandler */ = {
+			isa = PBXGroup;
+			children = (
+				A7A8D2C628EEFC00003AB3F3 /* ImageHandler.swift */,
+				A7A8D2CA28EEFD32003AB3F3 /* MockImageHandler.swift */,
+			);
+			path = ImageHandler;
+			sourceTree = "<group>";
+		};
+		A7B1AD5B28E5C09A004B06C0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A7B1AD5C28E5C102004B06C0 /* Collection.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +321,7 @@
 				A730C86528E1EA98007A2097 /* .gitignore in Resources */,
 				A730C86728E1EAA8007A2097 /* README.md in Resources */,
 				A730C83F28E1EA43007A2097 /* Assets.xcassets in Resources */,
+				A7029D1A28E4757400FBFF32 /* Games.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +344,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		A730C86A28E1EC34007A2097 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -290,8 +367,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7029D1C28E4772600FBFF32 /* ContentViewModel.swift in Sources */,
+				A71E224428F4408C00A03382 /* Language.swift in Sources */,
 				A730C83D28E1EA41007A2097 /* ContentView.swift in Sources */,
+				A7029D1728E474CC00FBFF32 /* Game.swift in Sources */,
+				A7A8D2CB28EEFD32003AB3F3 /* MockImageHandler.swift in Sources */,
+				A7B1AD5D28E5C102004B06C0 /* Collection.swift in Sources */,
 				A730C83B28E1EA41007A2097 /* DrinksApp.swift in Sources */,
+				A7B1AD5F28E5C39A004B06C0 /* MockGameFactory.swift in Sources */,
+				A7A8D2C728EEFC00003AB3F3 /* ImageHandler.swift in Sources */,
+				A7B1AD5A28E5BD4A004B06C0 /* GameFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
