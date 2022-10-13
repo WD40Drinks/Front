@@ -10,6 +10,7 @@
 		3FE133F628F44006006ADBED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE133F528F44006006ADBED /* Colors.swift */; };
 		3FE133F828F44019006ADBED /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE133F728F44019006ADBED /* Typography.swift */; };
 		3FE133FA28F4409E006ADBED /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FE133F928F4409E006ADBED /* IndieFlower-Regular.ttf */; };
+		3FE133FD28F46251006ADBED /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE133FC28F46251006ADBED /* GridView.swift */; };
 		A730C83B28E1EA41007A2097 /* DrinksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A730C83A28E1EA41007A2097 /* DrinksApp.swift */; };
 		A730C83D28E1EA41007A2097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A730C83C28E1EA41007A2097 /* ContentView.swift */; };
 		A730C83F28E1EA43007A2097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A730C83E28E1EA43007A2097 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		3FE133F728F44019006ADBED /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		3FE133F928F4409E006ADBED /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
 		3FE133FB28F4410F006ADBED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3FE133FC28F46251006ADBED /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		A730C83728E1EA41007A2097 /* Drinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A730C83A28E1EA41007A2097 /* DrinksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksApp.swift; sourceTree = "<group>"; };
 		A730C83C28E1EA41007A2097 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				3FE133F528F44006006ADBED /* Colors.swift */,
 				3FE133F728F44019006ADBED /* Typography.swift */,
 				3FE133F928F4409E006ADBED /* IndieFlower-Regular.ttf */,
+				3FE133FC28F46251006ADBED /* GridView.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				3FE133F628F44006006ADBED /* Colors.swift in Sources */,
 				3FE133F828F44019006ADBED /* Typography.swift in Sources */,
 				A730C83B28E1EA41007A2097 /* DrinksApp.swift in Sources */,
+				3FE133FD28F46251006ADBED /* GridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

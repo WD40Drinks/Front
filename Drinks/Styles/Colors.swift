@@ -8,17 +8,45 @@
 import SwiftUI
 
 extension Color {
+    init(r: Double, g: Double, b: Double) {
+        self = Color(red: r/255, green: g/255, blue: b/255)
+    }
+
     enum App {
-        static let red = Color(red: 236, green: 101, blue: 100)
-        static let blue = Color(red: 60, green: 129, blue: 191)
-        static let green = Color(red: 152, green: 198, blue: 72)
-        static let purple = Color(red: 144, green: 124, blue: 182)
-        static let yellow = Color(red: 248, green: 202, blue: 88)
-        
-        static let lightRed = Color(red: 252, green: 232, blue: 232)
-        static let lightBlue = Color(red: 236, green: 243, blue: 249)
-        static let lightGreen = Color(red: 244, green: 249, blue: 235)
-        static let lightPurple = Color(red: 241, green: 239, blue: 246)
-        static let lightYellow = Color(red: 254, green: 247, blue: 230)
+        case yellow
+        case red
+        case blue
+        case green
+        case purple
+
+        var primary: Color {
+            switch self {
+            case .yellow:
+                return Color(r: 248, g: 202, b: 88)
+            case .red:
+                return Color(r: 236, g: 101, b: 100)
+            case .blue:
+                return Color(r: 60, g: 129, b: 191)
+            case .green:
+                return Color(r: 152, g: 198, b: 72)
+            case .purple:
+                return Color(r: 144, g: 124, b: 182)
+            }
+        }
+
+        var light: Color {
+            switch self {
+            case .yellow:
+                return Color(r: 254, g: 247, b: 230)
+            case .red:
+                return Color(r: 252, g: 232, b: 232)
+            case .blue:
+                return Color(r: 236, g: 243, b: 249)
+            case .green:
+                return Color(r: 244, g: 249, b: 235)
+            case .purple:
+                return Color(r: 241, g: 239, b: 246)
+            }
+        }
     }
 }
