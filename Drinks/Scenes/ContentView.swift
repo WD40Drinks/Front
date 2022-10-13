@@ -45,7 +45,7 @@ struct ContentView: View {
                 Button(action: {
                     viewModel.goToNextGame()
                 }, label: {
-                    Text("Next")
+                    Text("next")
                 })
                 .padding()
             }
@@ -55,11 +55,11 @@ struct ContentView: View {
 
     private var errorView: some View {
         VStack {
-            Text("Could not load view here")
+            Text("view-not-loaded")
             Button(action: {
                 viewModel.createFactoryIfNeeded()
             }, label: {
-                Text("Try again")
+                Text("try-again")
             })
         }
         .padding()
