@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FF5929C28F9901100628C52 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5929828F9901100628C52 /* GridView.swift */; };
+		3FF5929D28F9901100628C52 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */; };
+		3FF5929E28F9901100628C52 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5929A28F9901100628C52 /* Colors.swift */; };
+		3FF5929F28F9901100628C52 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5929B28F9901100628C52 /* Typography.swift */; };
 		A7029D1728E474CC00FBFF32 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7029D1628E474CC00FBFF32 /* Game.swift */; };
 		A7029D1A28E4757400FBFF32 /* Games.json in Resources */ = {isa = PBXBuildFile; fileRef = A7029D1928E4757400FBFF32 /* Games.json */; };
 		A7029D1C28E4772600FBFF32 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7029D1B28E4772600FBFF32 /* ContentViewModel.swift */; };
@@ -47,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FF5929828F9901100628C52 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
+		3FF5929A28F9901100628C52 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3FF5929B28F9901100628C52 /* Typography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		3FF592A028F9902B00628C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A7029D1628E474CC00FBFF32 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A7029D1928E4757400FBFF32 /* Games.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Games.json; sourceTree = "<group>"; };
 		A7029D1B28E4772600FBFF32 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -98,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FF5929728F98FEC00628C52 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				3FF5929A28F9901100628C52 /* Colors.swift */,
+				3FF5929B28F9901100628C52 /* Typography.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		A7029D1428E4749400FBFF32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +170,13 @@
 		A730C83928E1EA41007A2097 /* Drinks */ = {
 			isa = PBXGroup;
 			children = (
+				3FF592A028F9902B00628C52 /* Info.plist */,
 				A730C83A28E1EA41007A2097 /* DrinksApp.swift */,
-				A730C83E28E1EA43007A2097 /* Assets.xcassets */,
 				A7829ACB28F8358600B9B405 /* Localizable.strings */,
+				A792FEC328F9A0F700AE7D3F /* Assets */,
 				A7029D1828E4752800FBFF32 /* Mock */,
+				3FF5929728F98FEC00628C52 /* Styles */,
+				A792FEC228F9A0CE00AE7D3F /* Components */,
 				A7029D1528E474AB00FBFF32 /* Scenes */,
 				A7029D1428E4749400FBFF32 /* Model */,
 				A7B1AD5B28E5C09A004B06C0 /* Util */,
@@ -187,6 +208,23 @@
 				A730C85728E1EA43007A2097 /* DrinksUITestsLaunchTests.swift */,
 			);
 			path = DrinksUITests;
+			sourceTree = "<group>";
+		};
+		A792FEC228F9A0CE00AE7D3F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3FF5929828F9901100628C52 /* GridView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A792FEC328F9A0F700AE7D3F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A730C83E28E1EA43007A2097 /* Assets.xcassets */,
+				3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		A7A8D2C828EEFD14003AB3F3 /* GameFactory */ = {
@@ -322,6 +360,7 @@
 			files = (
 				A730C86928E1EABC007A2097 /* .swiftlint.yml in Resources */,
 				A730C84228E1EA43007A2097 /* Preview Assets.xcassets in Resources */,
+				3FF5929D28F9901100628C52 /* IndieFlower-Regular.ttf in Resources */,
 				A730C86528E1EA98007A2097 /* .gitignore in Resources */,
 				A7829AC928F8358600B9B405 /* Localizable.strings in Resources */,
 				A730C86728E1EAA8007A2097 /* README.md in Resources */,
@@ -373,14 +412,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7029D1C28E4772600FBFF32 /* ContentViewModel.swift in Sources */,
+				3FF5929E28F9901100628C52 /* Colors.swift in Sources */,
 				A71E224428F4408C00A03382 /* Locale.swift in Sources */,
 				A730C83D28E1EA41007A2097 /* ContentView.swift in Sources */,
+				3FF5929C28F9901100628C52 /* GridView.swift in Sources */,
 				A7029D1728E474CC00FBFF32 /* Game.swift in Sources */,
 				A7A8D2CB28EEFD32003AB3F3 /* MockImageHandler.swift in Sources */,
 				A7B1AD5D28E5C102004B06C0 /* Collection.swift in Sources */,
 				A730C83B28E1EA41007A2097 /* DrinksApp.swift in Sources */,
 				A7B1AD5F28E5C39A004B06C0 /* MockGameFactory.swift in Sources */,
 				A7A8D2C728EEFC00003AB3F3 /* ImageHandler.swift in Sources */,
+				3FF5929F28F9901100628C52 /* Typography.swift in Sources */,
 				A7B1AD5A28E5BD4A004B06C0 /* GameFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +597,7 @@
 				DEVELOPMENT_TEAM = 3W2GZBLUSM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Drinks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -584,6 +627,7 @@
 				DEVELOPMENT_TEAM = 3W2GZBLUSM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Drinks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
