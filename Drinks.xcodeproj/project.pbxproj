@@ -111,8 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				3FF5929A28F9901100628C52 /* Colors.swift */,
-				3FF5929828F9901100628C52 /* GridView.swift */,
-				3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */,
 				3FF5929B28F9901100628C52 /* Typography.swift */,
 			);
 			path = Styles;
@@ -173,11 +171,12 @@
 			isa = PBXGroup;
 			children = (
 				3FF592A028F9902B00628C52 /* Info.plist */,
-				3FF5929728F98FEC00628C52 /* Styles */,
 				A730C83A28E1EA41007A2097 /* DrinksApp.swift */,
-				A730C83E28E1EA43007A2097 /* Assets.xcassets */,
 				A7829ACB28F8358600B9B405 /* Localizable.strings */,
+				A792FEC328F9A0F700AE7D3F /* Assets */,
 				A7029D1828E4752800FBFF32 /* Mock */,
+				3FF5929728F98FEC00628C52 /* Styles */,
+				A792FEC228F9A0CE00AE7D3F /* Components */,
 				A7029D1528E474AB00FBFF32 /* Scenes */,
 				A7029D1428E4749400FBFF32 /* Model */,
 				A7B1AD5B28E5C09A004B06C0 /* Util */,
@@ -209,6 +208,23 @@
 				A730C85728E1EA43007A2097 /* DrinksUITestsLaunchTests.swift */,
 			);
 			path = DrinksUITests;
+			sourceTree = "<group>";
+		};
+		A792FEC228F9A0CE00AE7D3F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3FF5929828F9901100628C52 /* GridView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A792FEC328F9A0F700AE7D3F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A730C83E28E1EA43007A2097 /* Assets.xcassets */,
+				3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		A7A8D2C828EEFD14003AB3F3 /* GameFactory */ = {
