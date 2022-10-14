@@ -12,17 +12,17 @@ struct GridView<Content: View>: View {
     @ViewBuilder let content: () -> Content
 
     var body: some View {
-        ZStack {
-            color.light
+        content()
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .background {
+                color.light
 
-            Image("grid-background")
-                .renderingMode(.template)
-                .resizable()
-                .scaledToFill()
-                .foregroundColor(color.primary)
-                .edgesIgnoringSafeArea(.all)
-
-            content()
-        }
+                Image("grid-background")
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFill()
+                    .foregroundColor(color.primary)
+                    .edgesIgnoringSafeArea(.all)
+            }
     }
 }

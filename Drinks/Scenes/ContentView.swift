@@ -4,13 +4,15 @@ struct ContentView: View {
     @ObservedObject private var viewModel = ContentViewModel<MockGameFactory, MockImageHandler>()
 
     var body: some View {
-        switch viewModel.state {
-        case .loaded(_, let game):
-            buildGameView(game: game)
-        case .loading:
-            ProgressView()
-        case .error:
-            errorView
+        GridView(color: .yellow) {
+            switch viewModel.state {
+            case .loaded(_, let game):
+                buildGameView(game: game)
+            case .loading:
+                ProgressView()
+            case .error:
+                errorView
+            }
         }
     }
 
