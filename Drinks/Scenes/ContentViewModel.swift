@@ -1,6 +1,6 @@
 import SwiftUI
 
-class ContentViewModel<Factory: GameFactory, Handler: ImageHandler>: ObservableObject {
+class ContentViewModel<Factory: GameFactory>: ObservableObject {
     enum State {
         case loading
         case error
@@ -8,13 +8,10 @@ class ContentViewModel<Factory: GameFactory, Handler: ImageHandler>: ObservableO
     }
 
     @Published var state: State
-    @Published var image: UIImage?
     @Published var color: Color.App
-    private let imageHandler: Handler
 
     init() {
         self.state = .loading
-        self.imageHandler = Handler()
         self.color = .red
         createFactory()
     }
@@ -58,21 +55,6 @@ class ContentViewModel<Factory: GameFactory, Handler: ImageHandler>: ObservableO
 
         setState(.loaded(factory, nextGame))
         setColor(.random)
-        fetchImage(game: nextGame)
-    }
-
-    private func fetchImage(game: Game) {
-        DispatchQueue.main.async {
-            self.image = nil
-        }
-
-        let handler = Handler()
-        Task {
-            let image = await handler.getImage(name: game.imageName)
-            DispatchQueue.main.async {
-                self.image = image
-            }
-        }
     }
 
     private func setState(_ state: State) {

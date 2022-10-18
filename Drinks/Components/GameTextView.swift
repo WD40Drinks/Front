@@ -18,5 +18,4 @@ struct GameTextView: View {
                 .frame(maxWidth: 140)
         }
     }
-
 }

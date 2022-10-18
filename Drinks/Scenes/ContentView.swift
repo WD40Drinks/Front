@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ContentViewModel<MockGameFactory, MockImageHandler>()
+    @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
 
     var body: some View {
         GridView(color: viewModel.color) {
@@ -19,6 +19,7 @@ struct ContentView: View {
 
     private func buildGameView(game: Game) -> some View {
         VStack {
+            Spacer()
             Text(game.name)
                 .font(.App.title)
                 .multilineTextAlignment(.center)
@@ -29,16 +30,9 @@ struct ContentView: View {
                     .offset(x: -30)
                 Spacer()
             }
-            HStack {
-                if let image = viewModel.image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                } else {
-                    ProgressView()
-                }
-            }
-            .frame(width: 300, height: 200)
+            ColoredImage(imageName: game.imageName)
+                .frame(width: 300, height: 200)
+            Spacer()
             nextButton
         }
         .padding()
