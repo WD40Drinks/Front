@@ -1,10 +1,3 @@
-//
-//  Colors.swift
-//  Drinks
-//
-//  Created by Gabriel Muelas on 10/10/22.
-//
-
 import SwiftUI
 
 extension Color {
@@ -12,7 +5,7 @@ extension Color {
         self.init(red: r/255, green: g/255, blue: b/255)
     }
 
-    enum App {
+    enum App: CaseIterable {
         case yellow
         case red
         case blue
@@ -48,5 +41,26 @@ extension Color {
                 return Color(r: 241, g: 239, b: 246)
             }
         }
+
+        static var random: Self {
+            allCases.randomElement() ?? .yellow
+        }
+    }
+}
+
+private struct AppColorKey: EnvironmentKey {
+    static let defaultValue = Color.App.yellow
+}
+
+extension EnvironmentValues {
+    var appColor: Color.App {
+        get { self[AppColorKey.self] }
+        set { self[AppColorKey.self] = newValue }
+    }
+}
+
+extension View {
+    func appColor(_ color: Color.App) -> some View {
+        environment(\.appColor, color)
     }
 }

@@ -31,6 +31,7 @@
 		A7B1AD5A28E5BD4A004B06C0 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1AD5928E5BD4A004B06C0 /* GameFactory.swift */; };
 		A7B1AD5D28E5C102004B06C0 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1AD5C28E5C102004B06C0 /* Collection.swift */; };
 		A7B1AD5F28E5C39A004B06C0 /* MockGameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1AD5E28E5C39A004B06C0 /* MockGameFactory.swift */; };
+		A7C8918C28FECDE700A8DC13 /* GameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C8918B28FECDE700A8DC13 /* GameTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		A7B1AD5928E5BD4A004B06C0 /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
 		A7B1AD5C28E5C102004B06C0 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		A7B1AD5E28E5C39A004B06C0 /* MockGameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGameFactory.swift; sourceTree = "<group>"; };
+		A7C8918B28FECDE700A8DC13 /* GameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				3FF5929828F9901100628C52 /* GridView.swift */,
+				A7C8918B28FECDE700A8DC13 /* GameTextView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				A7029D1C28E4772600FBFF32 /* ContentViewModel.swift in Sources */,
 				3FF5929E28F9901100628C52 /* Colors.swift in Sources */,
 				A71E224428F4408C00A03382 /* Locale.swift in Sources */,
+				A7C8918C28FECDE700A8DC13 /* GameTextView.swift in Sources */,
 				A730C83D28E1EA41007A2097 /* ContentView.swift in Sources */,
 				3FF5929C28F9901100628C52 /* GridView.swift in Sources */,
 				A7029D1728E474CC00FBFF32 /* Game.swift in Sources */,

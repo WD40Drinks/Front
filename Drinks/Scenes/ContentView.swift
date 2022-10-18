@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var viewModel = ContentViewModel<MockGameFactory, MockImageHandler>()
+    @StateObject private var viewModel = ContentViewModel<MockGameFactory, MockImageHandler>()
 
     var body: some View {
-        GridView(color: .yellow) {
+        GridView(color: viewModel.color) {
             switch viewModel.state {
             case .loaded(_, let game):
                 buildGameView(game: game)
@@ -14,18 +14,21 @@ struct ContentView: View {
                 errorView
             }
         }
+        .appColor(viewModel.color)
     }
 
     private func buildGameView(game: Game) -> some View {
         VStack {
             Text(game.name)
-                .font(.title)
-                .fontWeight(.bold)
+                .font(.App.title)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 32)
             Spacer()
-            Text(game.text ?? "")
-                .foregroundColor(.gray)
-                .font(.title3)
-            Spacer()
+            if let text = game.text {
+                GameTextView(text: text)
+                    .offset(x: -30)
+                Spacer()
+            }
             HStack {
                 if let image = viewModel.image {
                     Image(uiImage: image)
@@ -36,23 +39,21 @@ struct ContentView: View {
                 }
             }
             .frame(width: 300, height: 200)
-            Spacer()
-            if let rules = game.rules {
-                Text(rules)
-                    .font(.body)
-                Spacer()
-            }
-            HStack {
-                Spacer()
-                Button(action: {
-                    viewModel.goToNextGame()
-                }, label: {
-                    Text("next")
-                })
-                .padding()
-            }
+            nextButton
         }
         .padding()
+    }
+
+    private var nextButton: some View {
+        HStack {
+            Spacer()
+            Button(action: {
+                viewModel.goToNextGame()
+            }, label: {
+                Text("next")
+            })
+            .padding()
+        }
     }
 
     private var errorView: some View {

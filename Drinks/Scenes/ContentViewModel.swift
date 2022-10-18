@@ -9,11 +9,13 @@ class ContentViewModel<Factory: GameFactory, Handler: ImageHandler>: ObservableO
 
     @Published var state: State
     @Published var image: UIImage?
+    @Published var color: Color.App
     private let imageHandler: Handler
 
     init() {
         self.state = .loading
         self.imageHandler = Handler()
+        self.color = .red
         createFactory()
     }
 
@@ -55,6 +57,7 @@ class ContentViewModel<Factory: GameFactory, Handler: ImageHandler>: ObservableO
         }
 
         setState(.loaded(factory, nextGame))
+        setColor(.random)
         fetchImage(game: nextGame)
     }
 
@@ -75,6 +78,12 @@ class ContentViewModel<Factory: GameFactory, Handler: ImageHandler>: ObservableO
     private func setState(_ state: State) {
         DispatchQueue.main.async {
             self.state = state
+        }
+    }
+
+    private func setColor(_ color: Color.App) {
+        DispatchQueue.main.async {
+            self.color = color
         }
     }
 }
