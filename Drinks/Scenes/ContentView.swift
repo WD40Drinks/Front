@@ -7,59 +7,14 @@ struct ContentView: View {
         GridView(color: viewModel.color) {
             switch viewModel.state {
             case .loaded(_, let game):
-                buildGameView(game: game)
+                GameView(game: game, nextButtonAction: viewModel.goToNextGame)
             case .loading:
                 ProgressView()
             case .error:
-                errorView
+                ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
             }
         }
         .appColor(viewModel.color)
-    }
-
-    private func buildGameView(game: Game) -> some View {
-        VStack {
-            Spacer()
-            Text(game.name)
-                .font(.App.title)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 32)
-            Spacer()
-            if let text = game.text {
-                GameTextView(text: text)
-                    .offset(x: -30)
-                Spacer()
-            }
-            ColoredImage(imageName: game.imageName)
-                .frame(width: 300, height: 200)
-            Spacer()
-            nextButton
-        }
-        .padding()
-    }
-
-    private var nextButton: some View {
-        HStack {
-            Spacer()
-            Button(action: {
-                viewModel.goToNextGame()
-            }, label: {
-                Text("next")
-            })
-            .padding()
-        }
-    }
-
-    private var errorView: some View {
-        VStack {
-            Text("view-not-loaded")
-            Button(action: {
-                viewModel.createFactoryIfNeeded()
-            }, label: {
-                Text("try-again")
-            })
-        }
-        .padding()
     }
 }
 
