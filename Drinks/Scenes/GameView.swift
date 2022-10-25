@@ -24,9 +24,8 @@ struct GameView: View {
                 nextButton
             }
 
-            RulesModalView {
-                Text("Testing")
-                    .font(.App.title)
+            if let rules = game.rules {
+                RulesModalView(name: game.name, rules: rules)
             }
         }
     }

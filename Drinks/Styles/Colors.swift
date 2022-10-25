@@ -27,6 +27,21 @@ extension Color {
             }
         }
 
+        var secondary: Color {
+            switch self {
+            case .yellow:
+                return Color(r: 248, g: 223, b: 161)
+            case .red:
+                return Color(r: 236, g: 170, b: 170)
+            case .blue:
+                return Color(r: 117, g: 156, b: 191)
+            case .green:
+                return Color(r: 173, g: 198, b: 131)
+            case .purple:
+                return Color(r: 196, g: 179, b: 229)
+            }
+        }
+
         var light: Color {
             switch self {
             case .yellow:

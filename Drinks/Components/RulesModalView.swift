@@ -1,61 +1,32 @@
 import SwiftUI
 
-struct RulesModalView<Content: View>: View {
+struct RulesModalView: View {
 
-    static var snapRatio: CGFloat { 0.25 }
-    static var maxHeightRatio: CGFloat { 0.90 }
+    static let snapRatio: CGFloat = 0.25
 
     // MARK: - Properties
 
-    @State var isOpen: Bool = true
+    @State var isOpen: Bool = false
     @GestureState private var translation: CGFloat = 0
     @Environment(\.appColor) var color
-    let content: Content
+    let name: String
+    let rules: String
 
-    init(@ViewBuilder content: () -> Content) {
-        self.content = content()
-    }
-
-    private var maxHeight: CGFloat {
-        Self.maxHeightRatio * UIScreen.main.bounds.height
-    }
-
-    private var offset: CGFloat {
-        isOpen ? 0 : maxHeight
-    }
+    private var maxHeight: CGFloat { 0.90 * UIScreen.main.bounds.height }
+    private var offset: CGFloat { isOpen ? 0 : maxHeight }
 
     var body: some View {
         VStack(spacing: 20) {
             if !isOpen {
-                VStack(spacing: 10) {
-                    Image("modal-arrow")
-                        .resizable()
-                        .frame(width: 56, height: 15)
-                    Text("rules")
-                        .font(.App.paragraph)
-                }
-                .padding(.vertical, 20)
-                .padding(.horizontal, 60)
-                .onTapGesture { withAnimation { isOpen.toggle() } }
+                openRulesIndicator
             }
 
             VStack(spacing: 40) {
-                VStack(spacing: 10) {
-                    Text("close")
-                        .font(.App.paragraph)
-                    Image("modal-arrow")
-                        .resizable()
-                        .frame(width: 56, height: 15)
-                        .rotationEffect(.degrees(180))
-                }
-                .padding(.vertical, 20)
-                .padding(.horizontal, 60)
-                .onTapGesture { withAnimation { isOpen.toggle() } }
-
+                closeRulesIndicator
                 content
             }
             .frame(width: UIScreen.main.bounds.width, height: self.maxHeight, alignment: .top)
-            .background(color.primary)
+            .background(color.secondary)
             .cornerRadius(20)
         }
         .frame(height: UIScreen.main.bounds.height, alignment: .bottom)
@@ -72,6 +43,43 @@ struct RulesModalView<Content: View>: View {
                 self.isOpen = value.translation.height < 0
             }
         )
+    }
 
+    private var content: some View {
+        VStack(spacing: 30) {
+            Text(name)
+                .font(.App.title)
+                .multilineTextAlignment(.center)
+            Text(rules)
+                .font(.App.paragraph)
+        }
+        .padding(.horizontal, 40)
+    }
+
+    private var openRulesIndicator: some View {
+        VStack(spacing: 10) {
+            Image("modal-arrow")
+                .resizable()
+                .frame(width: 56, height: 15)
+            Text("rules")
+                .font(.App.paragraph)
+        }
+        .padding(.vertical, 20)
+        .padding(.horizontal, 60)
+        .onTapGesture { withAnimation { isOpen.toggle() } }
+    }
+
+    private var closeRulesIndicator: some View {
+        VStack(spacing: 10) {
+            Text("close")
+                .font(.App.paragraph)
+            Image("modal-arrow")
+                .resizable()
+                .frame(width: 56, height: 15)
+                .rotationEffect(.degrees(180))
+        }
+        .padding(.vertical, 20)
+        .padding(.horizontal, 60)
+        .onTapGesture { withAnimation { isOpen.toggle() } }
     }
 }
