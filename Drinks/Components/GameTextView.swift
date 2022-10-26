@@ -9,7 +9,7 @@ struct GameTextView: View {
             Text(text)
                 .font(.App.paragraph)
                 .rotationEffect(.degrees(-4))
-                .frame(maxWidth: 200)
+                .frame(maxWidth: 250)
             Image("text-highlight")
                 .resizable()
                 .renderingMode(.template)
