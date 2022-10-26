@@ -2,13 +2,15 @@
     {
         "pt": {
             "name": "Natalício",
-            "text": "Todos que nasceram no mesmo dia do mês, no mês ou no ano do jogador bebem",
+            "type": "comum",
+            "text": "Todos que nasceram no mesmo dia do mês, no mês ou no ano do jogador bebem.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Born this date",
-            "text": "Everyone born on the same day of the month, month or year as the player drinks",
+            "type": "comum",
+            "text": "Everyone born on the same day of the month, month or year as the player drinks.",
             "imageName": "glass",
             "rules": null
         }
@@ -16,13 +18,15 @@
     {
         "pt": {
             "name": "Amigo do peito",
-            "text": "Indique 1 pessoa para beber",
+            "type": "comum",
+            "text": "Indique 1 pessoa para beber.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Dear friend",
-            "text": "Choose one person to drink",
+            "type": "comum",
+            "text": "Choose one person to drink.",
             "imageName": "glass",
             "rules": null
         }
@@ -30,13 +34,15 @@
     {
         "pt": {
             "name": "Amigos do peito",
-            "text": "Indique 2 pessoas para beber",
+            "type": "comum",
+            "text": "Indique 2 pessoas para beber.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Dear friends",
-            "text": "Choose two people to drink",
+            "type": "comum",
+            "text": "Choose two people to drink.",
             "imageName": "glass",
             "rules": null
         }
@@ -44,13 +50,15 @@
     {
         "pt": {
             "name": "À esquerda",
-            "text": "A pessoa a sua esquerda bebe",
+            "type": "comum",
+            "text": "A pessoa a sua esquerda bebe.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "To the left",
-            "text": "The person to your left drinks",
+            "type": "comum",
+            "text": "The person to your left drinks.",
             "imageName": "glass",
             "rules": null
         }
@@ -58,13 +66,15 @@
     {
         "pt": {
             "name": "Cores",
-            "text": "Todos que estão usando as mesmas cores de roupa que você bebe",
+            "type": "comum",
+            "text": "Todos que estão usando as mesmas cores de roupa que você bebe.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Colors",
-            "text": "Everyone who is wearing the same colors of clothes as you drink",
+            "type": "comum",
+            "text": "Everyone who is wearing the same colors of clothes as you drink.",
             "imageName": "glass",
             "rules": null
         }
@@ -72,13 +82,15 @@
     {
         "pt": {
             "name": "Decisão popular",
-            "text": "Em consenso com o grupo, escolham uma pessoa para beber",
+            "type": "comum",
+            "text": "Em consenso com o grupo, escolham uma pessoa para beber.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Popular decision",
-            "text": "In agreement with the group, choose a person to drink",
+            "type": "comum",
+            "text": "In agreement with the group, choose a person to drink.",
             "imageName": "glass",
             "rules": null
         }
@@ -86,13 +98,15 @@
     {
         "pt": {
             "name": "Bebe",
-            "text": "O jogador bebe",
+            "type": "comum",
+            "text": "O jogador bebe.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Drink",
-            "text": "The player drinks",
+            "type": "comum",
+            "text": "The player drinks.",
             "imageName": "glass",
             "rules": null
         }
@@ -100,13 +114,15 @@
     {
         "pt": {
             "name": "Contragolpe",
-            "text": "A pessoa que mais bebeu escolhe um para beber",
+            "type": "comum",
+            "text": "A pessoa que mais bebeu escolhe um para beber.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Backlash",
-            "text": "The person who drank the most chooses one to drink",
+            "type": "comum",
+            "text": "The person who drank the most chooses one to drink.",
             "imageName": "glass",
             "rules": null
         }
@@ -114,13 +130,15 @@
     {
         "pt": {
             "name": "Vínculo",
-            "text": "Associe duas pessoas para que, sempre que uma beber, a outra também deve beber",
+            "type": "comum",
+            "text": "Associe duas pessoas para que, sempre que uma beber, a outra também deve beber. Definam quanto tempo durará.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Bond",
-            "text": "Associate two people so that whenever one drinks, the other should also drink",
+            "type": "comum",
+            "text": "Associate two people so that whenever one drinks, the other should also drink. Set how long it will last.",
             "imageName": "glass",
             "rules": null
         }
@@ -128,13 +146,15 @@
     {
         "pt": {
             "name": "Desafio da Lua",
-            "text": "Uive para lua como se fosse um lobo",
+            "type": "desafio",
+            "text": "Uive para lua como se fosse um lobo.",
             "imageName": "wolf",
             "rules": null
         },
         "en": {
             "name": "Moon challenge",
-            "text": "Howl at the moon like a wolf",
+            "type": "desafio",
+            "text": "Howl at the moon like a wolf.",
             "imageName": "wolf",
             "rules": null
         }
@@ -142,13 +162,15 @@
     {
         "pt": {
             "name": "Desafio da garrafa",
+            "type": "desafio",
             "text": "Interprete o parto de um garrafa.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Bottle challenge",
-            "text": "Interpret the delivery of a bottle.",
+            "type": "desafio",
+            "text": "Interpret the childbirth of a bottle.",
             "imageName": "glass",
             "rules": null
         }
@@ -156,13 +178,15 @@
     {
         "pt": {
             "name": "Desafio da bofetada",
-            "text": "Com o auxílio de um amigo, interprete um belo e dramático tapa cenográfico",
+            "type": "desafio",
+            "text": "Com o auxílio de um amigo, interprete um belo e dramático tapa cenográfico.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Slap challenge",
-            "text": "With the help of a friend, play a beautiful and dramatic scenographic slap",
+            "type": "desafio",
+            "text": "With the help of a friend, play a beautiful and dramatic scenographic slap.",
             "imageName": "glass",
             "rules": null
         }
@@ -170,13 +194,15 @@
     {
         "pt": {
             "name": "Liker",
-            "text": "Entre em alguma rede social e curta os 10 primeiros posts",
+            "type": "desafio",
+            "text": "Entre em alguma rede social. No perfil do primeiro usuário que aparecer, curta 5 posts aleatórios.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Liker",
-            "text": "Enter any social network and like the first 10 posts",
+            "type": "desafio",
+            "text": "Enter any social network. On the profile of the first user that appears, like 5 random posts.",
             "imageName": "glass",
             "rules": null
         }
@@ -184,12 +210,14 @@
     {
         "pt": {
             "name": "Propaganda grátis",
+            "type": "desafio",
             "text": "Tire uma foto do grupo e poste em alguma rede social que está jogando esse jogo",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Free advertising",
+            "type": "desafio",
             "text": "Take a photo of the group and post it on any social network saying that is playing this game",
             "imageName": "glass",
             "rules": null
@@ -198,12 +226,14 @@
     {
         "pt": {
             "name": "Patriota",
+            "type": "desafio",
             "text": "Cante o hino nacional enquanto faz uma dança hipnotizante.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Patriot",
+            "type": "desafio",
             "text": "Sing the national anthem while performing a mesmerizing dance",
             "imageName": "glass",
             "rules": null
@@ -212,13 +242,15 @@
     {
         "pt": {
             "name": "Dancinha do TikTok",
-            "text": "Faça uma dancinha típica do TikTok durante 30 segundos. Cuidado com a cabeça.",
+            "type": "desafio",
+            "text": "Faça uma dancinha típica do TikTok. Cuidado com a cabeça.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "TikTok dance",
-            "text": "Do a typical TikTok dance for 30 seconds. Be careful with your head.",
+            "type": "desafio",
+            "text": "Do a typical TikTok dance. Be careful with your head.",
             "imageName": "glass",
             "rules": null
         }
@@ -226,13 +258,15 @@
     {
         "pt": {
             "name": "Língua de fora",
-            "text": "Durante uma rodada, sempre que o jogador rir ele deve colocar a língua de fora",
+            "type": "desafio",
+            "text": "Todos devem rir com a língua de fora até algum jogar perder.",
             "imageName": "glass",
             "rules": null
         },
         "en": {
             "name": "Tongue sticking out",
-            "text": "During a round, whenever the player laughs he must stick his tongue out",
+            "type": "desafio",
+            "text": "Everyone should laugh with their tongue out until some player loses.",
             "imageName": "glass",
             "rules": null
         }
@@ -240,54 +274,62 @@
     {
         "pt": {
             "name": "VRUMMM",
+            "type": "coletivo",
             "text": "Sugestão: jogar até completar 3 erros",
             "imageName": "glass",
-            "rules": "Os partipantes podem imitar a aceleração de um carro (VRUM) para seguir para o próximo partipante em ordem. Pode imitar um carro freiando (IHHH) para inverter o sentido do jogo. Ou pode imitar o barulho de lombada (PLOFT) para pular o próximo jogador. O jogador que errar bebe."
+            "rules": "Os participantes podem imitar a aceleração de um carro (VRUM) para seguir para o próximo participante em ordem. Pode imitar um carro freiando (IHHH) para inverter o sentido do jogo. Ou pode imitar o barulho de lombada (PLOFT) para pular o próximo jogador. O jogador que errar bebe."
         },
         "en": {
             "name": "VRUMMM",
+            "type": "coletivo",
             "text": "Suggestion: play until the group completes 3 mistakes",
             "imageName": "glass",
-            "rules": "Participants can mimic the acceleration of a car (VRUM) to move on to the next participant in order. You can imitate a car braking (IHHH) to reverse the direction of the game. Or you can imitate the speed bump (PLOFT) to skip the next player. The player who misses drinks."
+            "rules": "Participants can imitate the acceleration of a car (VRUM) to move on to the next participant in order. You can imitate a car braking (IHHH) to reverse the direction of the game. Or you can imitate the speed bump (PLOFT) to skip the next player. The player who misses drinks."
         }
     },
     {
         "pt": {
-            "name": "Buffallo Bill",
+            "name": "Buffalo Bill",
+            "type": "coletivo",
             "text": null,
             "imageName": "buffalo",
-            "rules": "Os partipantes devem de organizar em roda. Cada jogador deve falar Buffallo Bill sem mostrar os dentes. Jogadores que mostrarem os dentes bebem. "
+            "rules": "Os participantes devem se organizar em roda. Cada jogador deve falar Buffalo Bill sem mostrar os dentes ou IRRA para inverter o sentido do jogo. Jogadores que mostrarem os dentes ou perderem a vez bebem."
         },
         "en": {
-            "name": "Buffallo Bill",
+            "name": "Buffalo Bill",
+            "type": "coletivo",
             "text": null,
             "imageName": "buffalo",
-            "rules": "Participants must organize in a circle. Each player must speak Buffalo Bill without showing his teeth. Players who show their teeth drink."
+            "rules": "Participants must organize themselves into a circle. Each player must speak Buffalo Bill without showing teeth or IRRA to reverse the direction of the game. Players who show their teeth or lose their turn drink."
         }
     },
     {
         "pt": {
             "name": "Jogo do PI",
+            "type": "coletivo",
             "text": null,
             "imageName": "glass",
-            "rules": "O jogador que tirou a carta fala o número 1. O próximo jogador fala o número seguinte (2) e assim por diante. A pegadinha é que todo múltiplo de três deve ser substituído pela palavra “pi”."
+            "rules": "O jogador que tirou a carta fala o número 1. O próximo jogador fala o número seguinte (2) e assim por diante. A pegadinha é que todo múltiplo de 3 OU números com final 3 deve ser substituído pela palavra “pi”."
         },
         "en": {
             "name": "PI Game",
+            "type": "coletivo",
             "text": null,
             "imageName": "glass",
-            "rules": "The player who drew the card speaks the number 1. The next player speaks the next number (2) and so on. The catch is that every multiple of three must be replaced by the word “pi”."
+            "rules": "The player who drew the card speaks the number 1. The next player speaks the next number (2) and so on. The catch is that every multiple of 3 OR numbers ending in 3 must be replaced by the word “pi”."
         }
     },
     {
         "pt": {
             "name": "CS Composto",
+            "type": "coletivo",
             "text": null,
             "imageName": "glass",
             "rules": "Os participantes se reúnem em roda e um primeiro diz uma palavra que não comece nem com C, nem com S ou que seja composta. O segundo deve falar uma palavra relacionada seguindo as mesmas regras."
         },
         "en": {
             "name": "CS Composite",
+            "type": "coletivo",
             "text": null,
             "imageName": "glass",
             "rules": "The participants gather in a circle and the first one says a word that does not start with C or S or that is composed. The second must speak a related word following the same rules."
@@ -296,12 +338,14 @@
     {
         "pt": {
             "name": "Eu nunca",
+            "type": "coletivo",
             "text": null,
             "imageName": "glass",
-            "rules": "O jogador deve falar a frase sugerida ou uma criação própria. Todos que já estiveram na situação descritam devem beber."
+            "rules": "O jogador deve falar a frase sugerida ou uma criação própria. Todos que já estiveram na situação descrita devem beber."
         },
         "en": {
             "name": "Never Have I Ever",
+            "type": "coletivo",
             "text": null,
             "imageName": "glass",
             "rules": "The player must speak the suggested phrase or a creation of their own. Everyone who has ever been in the situation described should drink."
@@ -310,43 +354,97 @@
     {
         "pt": {
             "name": "SEM RISADINHA",
-            "text": null,
+            "type": "regra",
+            "text": "É PROIBIDO RIR. O jogo segue e o primeiro jogador a rir perde.",
             "imageName": "glass",
-            "rules": "Durante uma rodada completa, é PROIBIDO rir. Seriedade no game."
+            "rules": null
         },
         "en": {
             "name": "NO LAUGHTER",
-            "text": null,
+            "type": "regra",
+            "text": "LAUGHING IS FORBIDDEN. The game goes on and the first player to laugh loses.",
             "imageName": "glass",
-            "rules": "During a full round, it is FORBIDDEN to laugh. Seriousness in the game."
+            "rules": null
         }
     },
     {
         "pt": {
             "name": "Cria regra",
-            "text": null,
+            "type": "comum",
+            "text": "Crie uma regra que deve valer por toda uma rodada.",
             "imageName": "glass",
-            "rules": "Crie uma regra que deve valer por toda uma rodada."
+            "rules": null
         },
         "en": {
             "name": "Create rule",
-            "text": null,
+            "type": "comum",
+            "text": "Create a rule that must be valid for an entire round.",
             "imageName": "glass",
-            "rules": "Create a rule that must be valid for an entire round."
+            "rules": null
+        }
+    },
+    {
+        "pt": {
+            "name": "Remove regra",
+            "type": "comum",
+            "text": "Remova uma regra que foi criada.",
+            "imageName": "glass",
+            "rules": null
+        },
+        "en": {
+            "name": "Remove rule",
+            "type": "comum",
+            "text": "Remove a rule that was created.",
+            "imageName": "glass",
+            "rules": null
         }
     },
     {
         "pt": {
             "name": "Palavra cantada",
-            "text": "Lalari lalara",
+            "type": "regra",
+            "text": "Todos os jogadores devem falar cantando até o primeiro jogador errar.",
             "imageName": "glass",
-            "rules": "Todos os jogadores devem falar contanto por toda uma rodada."
+            "rules": null
         },
         "en": {
             "name": "Singing",
-            "text": "Lalari lalara",
+            "type": "regra",
+            "text": "All players must speak singing until the first player misses.",
             "imageName": "glass",
-            "rules": "All players must speak in song for an entire round."
+            "rules": null
+        }
+    },
+    {
+        "pt": {
+            "name": "Jogo do Salame",
+            "type": "coletivo",
+            "text": null,
+            "imageName": "glass",
+            "rules": "O jogo começa com todos repetindo jogo do salame 3 vezes. O jogador que recebeu a carta começa falando o número 1 e os próximos jogadores devem falar em ordem um de cada vez. Se mais de uma pessoa falar o mesmo número, o jogo encerra e elas devem beber. Se o jogo chega até o fim, o último jogador bebe."
+        },
+        "en": {
+            "name": "Salami game",
+            "type": "coletivo",
+            "text": null,
+            "imageName": "glass",
+            "rules": "The game starts with everyone replaying the salami game 3 times. The player who received the card starts by saying the number 1 and the next players must speak in order one at a time. If more than one person calls the same number, the game ends and they must drink. If the game reaches the end, the last player drinks."
+        }
+    },
+    {
+        "pt": {
+            "name": "Axé Verão",
+            "type": "desafio",
+            "text": "Escolha dois jogadores e dê uma aula de axé para eles.",
+            "imageName": "glass",
+            "rules": null
+        },
+        "en": {
+            "name": "Teach them how to Dougie",
+            "type": "desafio",
+            "text": "Choose two players to teach them how to Dougie.",
+            "imageName": "glass",
+            "rules": null
         }
     }
 ]
