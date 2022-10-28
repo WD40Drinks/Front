@@ -343,13 +343,13 @@
             "imageName": "glass",
             "rules": "O jogador deve falar a frase sugerida ou uma criação própria. Todos que já estiveram na situação descrita devem beber.",
             "suggestions": [
-                "Eu nunca levei um tapa no rosto",
-                "Eu nunca fui um stalker obsessivo",
-                "Eu nunca cantei em um karaokê",
-                "Eu nunca fiz xixi de tanto rir",
-                "Eu nunca entrei numa festa sem ser chamado",
-                "Eu nunca apareci na TV",
-                "Eu nunca fingi um motivo pra sair de um encontro"
+                "... levei um tapa no rosto",
+                "... fui um stalker obsessivo",
+                "... cantei em um karaokê",
+                "... fiz xixi de tanto rir",
+                "... entrei numa festa sem ser chamado",
+                "... apareci na TV",
+                "... fingi um motivo pra sair de um encontro"
             ]
         },
         "en": {
