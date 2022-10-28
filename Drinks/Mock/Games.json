@@ -300,7 +300,7 @@
             "type": "coletivo",
             "text": null,
             "imageName": "buffalo",
-            "rules": "Participants must organize themselves into a circle. Each player must speak Buffalo Bill without showing teeth or IRRA to reverse the direction of the game. Players who show their teeth or lose their turn drink."
+            "rules": "Participants must organize themselves into a circle. Each player must say Buffalo Bill without showing teeth or IRRA to reverse the direction of the game. Players who show their teeth or lose their turn drink."
         }
     },
     {
@@ -316,7 +316,7 @@
             "type": "coletivo",
             "text": null,
             "imageName": "glass",
-            "rules": "The player who drew the card speaks the number 1. The next player speaks the next number (2) and so on. The catch is that every multiple of 3 OR numbers ending in 3 must be replaced by the word “pi”."
+            "rules": "The player who drew the card says the number 1. The next player says the next number (2) and so on. The catch is that every multiple of 3 OR numbers ending in 3 must be replaced by the word “pi”."
         }
     },
     {
@@ -332,7 +332,7 @@
             "type": "coletivo",
             "text": null,
             "imageName": "glass",
-            "rules": "The participants gather in a circle and the first one says a word that does not start with C or S or that is composed. The second must speak a related word following the same rules."
+            "rules": "The participants gather in a circle and the first one says a word that does not start with C or S or that is composed. The second must say a related word following the same rules."
         }
     },
     {
@@ -341,14 +341,32 @@
             "type": "coletivo",
             "text": null,
             "imageName": "glass",
-            "rules": "O jogador deve falar a frase sugerida ou uma criação própria. Todos que já estiveram na situação descrita devem beber."
+            "rules": "O jogador deve falar a frase sugerida ou uma criação própria. Todos que já estiveram na situação descrita devem beber.",
+            "suggestions": [
+                "Eu nunca levei um tapa no rosto",
+                "Eu nunca fui um stalker obsessivo",
+                "Eu nunca cantei em um karaokê",
+                "Eu nunca fiz xixi de tanto rir",
+                "Eu nunca entrei numa festa sem ser chamado",
+                "Eu nunca apareci na TV",
+                "Eu nunca fingi um motivo pra sair de um encontro"
+            ]
         },
         "en": {
             "name": "Never Have I Ever",
             "type": "coletivo",
             "text": null,
             "imageName": "glass",
-            "rules": "The player must speak the suggested phrase or a creation of their own. Everyone who has ever been in the situation described should drink."
+            "rules": "The player must say the suggested phrase or a creation of their own. Everyone who has ever been in the situation described should drink.",
+            "suggestions": [
+                "... got slapped in the face",
+                "... been an obsessive stalker"
+                "... sang in a karaoke",
+                "... peed from laughing too hard",
+                "... got into a party without being invited",
+                "... been in the TV",
+                "... faked a reason to get out of a date",
+            ]
         }
     },
     {
@@ -374,13 +392,31 @@
             "text": "Crie uma regra que deve valer por toda uma rodada.",
             "imageName": "glass",
             "rules": null
+            "suggestions": [
+                "Sempre que alguém beber, os do lado bebem",
+                "Os próximos 5 a beber bebem só metade",
+                "Os próximos que beberem bebem água também",
+                "Quem encostar no rosto bebe",
+                "Ninguém pode falar determinada palavra",
+                "A primeira palavra de TODA frase deve ser CANECO",
+                "Quem discordar de uma fala de outro bebe",
+            ]
         },
         "en": {
             "name": "Create rule",
             "type": "comum",
             "text": "Create a rule that must be valid for an entire round.",
             "imageName": "glass",
-            "rules": null
+            "rules": null,
+            "suggestions": [
+                "When one drinks, the ones beside them drink",
+                "The next 5 to drink get only half glass",
+                "The next ones to drink get to drink water",
+                "Whoever touches the face drinks",
+                "No one can say some specific word",
+                "First word of each sentence MUST be CANECO",
+                "Whoever disagrees with someone drinks"
+            ]
         }
     },
     {
@@ -421,14 +457,14 @@
             "type": "coletivo",
             "text": null,
             "imageName": "glass",
-            "rules": "O jogo começa com todos repetindo jogo do salame 3 vezes. O jogador que recebeu a carta começa falando o número 1 e os próximos jogadores devem falar em ordem um de cada vez. Se mais de uma pessoa falar o mesmo número, o jogo encerra e elas devem beber. Se o jogo chega até o fim, o último jogador bebe."
+            "rules": "O jogo começa com todos repetindo jogo do salame 3 vezes. O jogador que recebeu a carta começa falando o número 1 e os outros jogadores devem ir falando os números um de cada vez, mas não na ordem da roda. Se mais de uma pessoa falar o mesmo número ao mesmo tempo, o jogo encerra e elas devem beber. Se o jogo chega até o fim, o último jogador bebe."
         },
         "en": {
             "name": "Salami game",
             "type": "coletivo",
             "text": null,
             "imageName": "glass",
-            "rules": "The game starts with everyone replaying the salami game 3 times. The player who received the card starts by saying the number 1 and the next players must speak in order one at a time. If more than one person calls the same number, the game ends and they must drink. If the game reaches the end, the last player drinks."
+            "rules": "The game starts with everyone replaying the salami game 3 times. The player who received the card starts by saying the number 1 and the other players must say the numbers one at a time, but not in the game order. If more than one person calls the same number at the same time, the game ends and they must drink. If the game reaches the end, the last player drinks."
         }
     },
     {
