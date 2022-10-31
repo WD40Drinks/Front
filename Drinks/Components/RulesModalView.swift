@@ -52,8 +52,6 @@ struct RulesModalView: View {
         .padding(.horizontal, 40)
     }
 
-    
-
     private var closeRulesIndicator: some View {
         VStack(spacing: 10) {
             Text("close")
