@@ -16,6 +16,7 @@ extension Font {
 
     enum App {
         static let title = appFont(size: 56)
-        static let paragraph = appFont(size: 20)
+        static let paragraph = appFont(size: 24)
+        static let footnote = appFont(size: 14)
     }
 }
