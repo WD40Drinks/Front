@@ -6,7 +6,7 @@ struct RulesModalView: View {
 
     // MARK: - Properties
 
-    @State var isOpen: Bool = false
+    @Binding var isOpen: Bool
     @GestureState private var translation: CGFloat = 0
     @Environment(\.appColor) var color
     let name: String
@@ -17,10 +17,6 @@ struct RulesModalView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            if !isOpen {
-                openRulesIndicator
-            }
-
             VStack(spacing: 40) {
                 closeRulesIndicator
                 content
@@ -54,19 +50,6 @@ struct RulesModalView: View {
                 .font(.App.paragraph)
         }
         .padding(.horizontal, 40)
-    }
-
-    private var openRulesIndicator: some View {
-        VStack(spacing: 10) {
-            Image("modal-arrow")
-                .resizable()
-                .frame(width: 56, height: 15)
-            Text("rules")
-                .font(.App.paragraph)
-        }
-        .padding(.vertical, 20)
-        .padding(.horizontal, 60)
-        .onTapGesture { withAnimation { isOpen.toggle() } }
     }
 
     private var closeRulesIndicator: some View {

@@ -21,7 +21,7 @@ struct GridView<Content: View>: View {
                     .renderingMode(.template)
                     .resizable()
                     .scaledToFill()
-                    .foregroundColor(color.primary)
+                    .foregroundColor(color.secondary)
                     .edgesIgnoringSafeArea(.all)
             }
     }
