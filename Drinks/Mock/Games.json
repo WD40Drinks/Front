@@ -360,7 +360,7 @@
             "rules": "The player must say the suggested phrase or a creation of their own. Everyone who has ever been in the situation described should drink.",
             "suggestions": [
                 "... got slapped in the face",
-                "... been an obsessive stalker"
+                "... been an obsessive stalker",
                 "... sang in a karaoke",
                 "... peed from laughing too hard",
                 "... got into a party without being invited",
@@ -391,7 +391,7 @@
             "type": "comum",
             "text": "Crie uma regra que deve valer por toda uma rodada.",
             "imageName": "glass",
-            "rules": null
+            "rules": null,
             "suggestions": [
                 "Sempre que alguém beber, os do lado bebem",
                 "Os próximos 5 a beber bebem só metade",
@@ -415,7 +415,7 @@
                 "Whoever touches the face drinks",
                 "No one can say some specific word",
                 "First word of each sentence MUST be CANECO",
-                "Whoever disagrees with someone drinks"
+                "Whoever disagrees with someone drinks",
             ]
         }
     },
