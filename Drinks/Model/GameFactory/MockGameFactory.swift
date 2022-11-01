@@ -35,7 +35,8 @@ class MockGameFactory: GameFactory {
         }
 
         let languageIdentifier = Locale.current.twoCharacterId
-        return games.compactMap { $0[languageIdentifier] }
+        let languageFilteredGames = games.compactMap { $0[languageIdentifier] }
+        return languageFilteredGames.shuffled()
     }
 }
 
