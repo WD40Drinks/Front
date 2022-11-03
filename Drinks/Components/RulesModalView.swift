@@ -19,7 +19,9 @@ struct RulesModalView: View {
         VStack(spacing: 20) {
             VStack(spacing: 40) {
                 closeRulesIndicator
-                content
+                ScrollView {
+                    content
+                }
             }
             .frame(width: UIScreen.main.bounds.width, height: self.maxHeight, alignment: .top)
             .background(color.secondary)
@@ -50,6 +52,7 @@ struct RulesModalView: View {
                 .font(.App.paragraph)
         }
         .padding(.horizontal, 40)
+        .padding(.bottom, 40)
     }
 
     private var closeRulesIndicator: some View {
