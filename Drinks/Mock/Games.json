@@ -20,14 +20,14 @@
             "name": "Amigo do peito",
             "type": "comum",
             "text": "Indique 1 pessoa para beber.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         },
         "en": {
             "name": "Dear friend",
             "type": "comum",
             "text": "Choose one person to drink.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         }
     },
@@ -36,14 +36,14 @@
             "name": "Amigos do peito",
             "type": "comum",
             "text": "Indique 2 pessoas para beber.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         },
         "en": {
             "name": "Dear friends",
             "type": "comum",
             "text": "Choose two people to drink.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         }
     },
@@ -84,14 +84,14 @@
             "name": "Decisão popular",
             "type": "comum",
             "text": "Em consenso com o grupo, escolham uma pessoa para beber.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         },
         "en": {
             "name": "Popular decision",
             "type": "comum",
             "text": "In agreement with the group, choose a person to drink.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         }
     },
@@ -132,14 +132,14 @@
             "name": "Vínculo",
             "type": "comum",
             "text": "Associe duas pessoas para que, sempre que uma beber, a outra também deve beber. Definam quanto tempo durará.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         },
         "en": {
             "name": "Bond",
             "type": "comum",
             "text": "Associate two people so that whenever one drinks, the other should also drink. Set how long it will last.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         }
     },
@@ -180,14 +180,14 @@
             "name": "Desafio da bofetada",
             "type": "desafio",
             "text": "Com o auxílio de um amigo, interprete um belo e dramático tapa cenográfico.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         },
         "en": {
             "name": "Slap challenge",
             "type": "desafio",
             "text": "With the help of a friend, play a beautiful and dramatic scenographic slap.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         }
     },
@@ -212,14 +212,14 @@
             "name": "Propaganda grátis",
             "type": "desafio",
             "text": "Tire uma foto do grupo e poste em alguma rede social que está jogando esse jogo",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         },
         "en": {
             "name": "Free advertising",
             "type": "desafio",
             "text": "Take a photo of the group and post it on any social network saying that is playing this game",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         }
     },
@@ -260,14 +260,14 @@
             "name": "Língua de fora",
             "type": "desafio",
             "text": "Todos devem rir com a língua de fora até algum jogar perder.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         },
         "en": {
             "name": "Tongue sticking out",
             "type": "desafio",
             "text": "Everyone should laugh with their tongue out until some player loses.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         }
     },
@@ -308,14 +308,14 @@
             "name": "Jogo do PI",
             "type": "coletivo",
             "text": null,
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": "O jogador que tirou a carta fala o número 1. O próximo jogador fala o número seguinte (2) e assim por diante. A pegadinha é que todo múltiplo de 3 OU números com final 3 deve ser substituído pela palavra “pi”."
         },
         "en": {
             "name": "PI Game",
             "type": "coletivo",
             "text": null,
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": "The player who drew the card says the number 1. The next player says the next number (2) and so on. The catch is that every multiple of 3 OR numbers ending in 3 must be replaced by the word “pi”."
         }
     },
@@ -374,14 +374,14 @@
             "name": "SEM RISADINHA",
             "type": "regra",
             "text": "É PROIBIDO RIR. O jogo segue e o primeiro jogador a rir perde.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         },
         "en": {
             "name": "NO LAUGHTER",
             "type": "regra",
             "text": "LAUGHING IS FORBIDDEN. The game goes on and the first player to laugh loses.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         }
     },
@@ -424,14 +424,14 @@
             "name": "Remove regra",
             "type": "comum",
             "text": "Remova uma regra que foi criada.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         },
         "en": {
             "name": "Remove rule",
             "type": "comum",
             "text": "Remove a rule that was created.",
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": null
         }
     },
@@ -456,14 +456,14 @@
             "name": "Jogo do Salame",
             "type": "coletivo",
             "text": null,
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": "O jogo começa com todos repetindo jogo do salame 3 vezes. O jogador que recebeu a carta começa falando o número 1 e os outros jogadores devem ir falando os números um de cada vez, mas não na ordem da roda. Se mais de uma pessoa falar o mesmo número ao mesmo tempo, o jogo encerra e elas devem beber. Se o jogo chega até o fim, o último jogador bebe."
         },
         "en": {
             "name": "Salami game",
             "type": "coletivo",
             "text": null,
-            "imageName": "glass",
+            "imageName": "fish",
             "rules": "The game starts with everyone replaying the salami game 3 times. The player who received the card starts by saying the number 1 and the other players must say the numbers one at a time, but not in the game order. If more than one person calls the same number at the same time, the game ends and they must drink. If the game reaches the end, the last player drinks."
         }
     },
