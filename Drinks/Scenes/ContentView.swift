@@ -3,18 +3,38 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
 
+    var configurationButton: some View {
+        Button(action: {
+            viewModel.presentConfiguration.toggle()
+        }, label: {
+            Image("gearshape.stroke")
+                .symbolRenderingMode(.palette)
+                .foregroundStyle(.black, viewModel.color.primary)
+        })
+        .sheet(isPresented: $viewModel.presentConfiguration) {
+            ConfigurationView()
+        }
+    }
+
     var body: some View {
-        GridView(color: viewModel.color) {
-            switch viewModel.state {
-            case .loaded(_, let game):
-                GameView(game: game, nextButtonAction: viewModel.goToNextGame)
-            case .loading:
-                ProgressView()
-            case .error:
-                ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
+        NavigationView {
+            GridView(color: viewModel.color) {
+                switch viewModel.state {
+                case .loaded(_, let game):
+                    GameView(game: game, nextButtonAction: viewModel.goToNextGame)
+                case .loading:
+                    ProgressView()
+                case .error:
+                    ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
+                }
+            }
+            .appColor(viewModel.color)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    configurationButton
+                }
             }
         }
-        .appColor(viewModel.color)
     }
 }
 

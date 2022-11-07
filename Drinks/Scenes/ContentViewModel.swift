@@ -9,10 +9,12 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
 
     @Published var state: State
     @Published var color: Color.App
+    @Published var presentConfiguration: Bool
 
     init() {
         self.state = .loading
         self.color = .red
+        self.presentConfiguration = false
         createFactory()
     }
 
