@@ -64,6 +64,15 @@ struct GameView: View {
             .padding(.vertical, 20)
             .padding(.horizontal, 60)
             .onTapGesture { withAnimation { isRulesOpen.toggle() } }
+            .gesture(
+                DragGesture(minimumDistance: 50).onChanged { value in
+                    let didDragVertically = abs(value.translation.height) > abs(value.translation.width)
+                    let didDragUp = value.translation.height < 0
+                    if didDragVertically && didDragUp {
+                        withAnimation { isRulesOpen = true }
+                    }
+                }
+            )
         }
     }
 
