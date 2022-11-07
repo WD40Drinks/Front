@@ -19,6 +19,7 @@ struct GameView: View {
             }
 
             nextButton
+            SuggestionView()
             rulesModal
         }
         .edgesIgnoringSafeArea(.all)
