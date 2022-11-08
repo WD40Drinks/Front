@@ -1,30 +1,47 @@
 import SwiftUI
 
 struct SuggestionView: View {
-    @State private var isOpen = false
+    let text: String
+    @State private var isSuggestionOpen = false
+    @State private var isTextShowing = false
 
     var body: some View {
-        ZStack {
-            Image("baiacu")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(
-                    width: isOpen ? 520 : 100,
-                    height: isOpen ? 520 : 100
-                )
-                .position(
-                    x: isOpen ? UIScreen.main.bounds.width / 2 - 30 : 0,
-                    y: UIScreen.main.bounds.height - (isOpen ? 300 : 120)
-                )
-                .animation(.linear, value: isOpen)
-                .onTapGesture {
-                    withAnimation { isOpen.toggle() }
-                }
-
-            if isOpen {
-                Text("eu nunca fui expulso da sala de aula...")
+        ZStack(alignment: .center) {
+            ColoredImage(imageName: "baiacu")
+            if isTextShowing {
+                Text(text)
                     .font(.App.paragraph)
+                    .frame(maxWidth: 300)
+                    .offset(y: -40)
             }
+        }
+        .frame(
+            width: isSuggestionOpen ? 520 : 100,
+            height: isSuggestionOpen ? 520 : 100
+        )
+        .position(framePosition)
+        .onTapGesture {
+            if isSuggestionOpen {
+                isTextShowing = false
+                withAnimation { isSuggestionOpen = false }
+            } else {
+                withAnimation { isSuggestionOpen = true }
+                withAnimation(.easeIn.delay(0.3)) { isTextShowing = true }
+            }
+        }
+    }
+
+    private var framePosition: CGPoint {
+        if isSuggestionOpen {
+            return CGPoint(
+                x: UIScreen.main.bounds.width / 2 - 10,
+                y: UIScreen.main.bounds.height - 300
+            )
+        } else {
+            return CGPoint(
+                x: 0,
+                y: UIScreen.main.bounds.height - 120
+            )
         }
     }
 }

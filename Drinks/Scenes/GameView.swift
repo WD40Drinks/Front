@@ -19,7 +19,7 @@ struct GameView: View {
             }
 
             nextButton
-            SuggestionView()
+            suggestion
             rulesModal
         }
         .edgesIgnoringSafeArea(.all)
@@ -93,6 +93,13 @@ struct GameView: View {
             x: UIScreen.main.bounds.width,
             y: UIScreen.main.bounds.height - 120
         )
+    }
+
+    @ViewBuilder
+    private var suggestion: some View {
+        if let suggestion = game.suggestions?.randomElement() {
+            SuggestionView(text: suggestion)
+        }
     }
 
     @ViewBuilder
