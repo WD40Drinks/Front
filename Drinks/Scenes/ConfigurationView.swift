@@ -1,11 +1,18 @@
-//
-//  ConfigurationView.swift
-//  Drinks
-//
-//  Created by Gabriel Muelas on 07/11/22.
-//
-
 import SwiftUI
+
+struct GameToggleView: View {
+    @State var enabled: Bool = true
+
+    let game: Game
+    let action: () -> Void
+
+    var body: some View {
+        Toggle(game.name, isOn: $enabled)
+            .onChange(of: enabled) { _ in
+                action()
+            }
+    }
+}
 
 struct ConfigurationView: View {
     @State var teste: Bool = false
@@ -18,7 +25,9 @@ struct ConfigurationView: View {
             List {
                 Section {
                     ForEach(viewModel.games, id: \.name) { game in
-                        Toggle(game.name, isOn: $teste)
+                        GameToggleView(game: game, action: {
+                            viewModel.toggleGameEnabled(game)
+                        })
                     }
                 } header: {
                     Text("games")

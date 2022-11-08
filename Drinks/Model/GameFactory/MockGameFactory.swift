@@ -8,9 +8,28 @@ class MockGameFactory: GameFactory {
         self.games = try await Self.decodeGames()
     }
 
+    private var disabledGamesIndex: [Int] = []
+    func toggleGameEnabled(_ game: Game) {
+        guard let idx = games.firstIndex(where: { game.name == $0.name }) else {
+            print("DEBUG: Could not find game")
+            return
+        }
+
+        if disabledGamesIndex.contains(idx) {
+            disabledGamesIndex.removeAll { $0 == idx }
+        } else {
+            disabledGamesIndex.append(idx)
+        }
+
+    }
+
     func nextGame() throws -> Game {
         guard !games.isEmpty else {
             throw GameFactoryError.emptyGameSource
+        }
+
+        if disabledGamesIndex.contains(nextGameIndex) {
+            nextGameIndex += 1
         }
 
         if let game = games.get(at: nextGameIndex) {

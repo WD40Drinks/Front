@@ -64,6 +64,16 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         setColor(.random)
     }
 
+    func toggleGameEnabled(_ game: Game) {
+        guard let factory else {
+            // TODO: Devo settar erro?
+            print("DEBUG: failed finding game factory")
+            return
+        }
+
+        factory.toggleGameEnabled(game)
+    }
+
     private func setState(_ state: State) {
         DispatchQueue.main.async {
             self.state = state
