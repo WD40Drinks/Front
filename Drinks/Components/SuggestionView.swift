@@ -25,7 +25,7 @@ struct SuggestionView: View {
                 if isTextShowing {
                     Text(text)
                         .font(.App.paragraph)
-                        .frame(maxWidth: 300)
+                        .frame(maxWidth: 215)
                         .offset(y: -40)
                 }
             }
