@@ -2,6 +2,7 @@ import Foundation
 
 protocol GameFactory {
     init() async throws
+    var games: [Game] { get }
     func nextGame() throws -> Game
 }
 

@@ -12,7 +12,7 @@ struct ContentView: View {
                 .foregroundStyle(.black, viewModel.color.primary)
         })
         .sheet(isPresented: $viewModel.presentConfiguration) {
-            ConfigurationView()
+            ConfigurationView(viewModel: viewModel)
         }
     }
 

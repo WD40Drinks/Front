@@ -10,6 +10,10 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     @Published var state: State
     @Published var color: Color.App
     @Published var presentConfiguration: Bool
+    private var factory: GameFactory?
+    var games: [Game] {
+        self.factory?.games ?? []
+    }
 
     init() {
         self.state = .loading
@@ -35,6 +39,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
                 return
             }
 
+            self.factory = factory
             goToNextGame(factory: factory)
         }
     }

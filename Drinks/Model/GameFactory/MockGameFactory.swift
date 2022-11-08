@@ -2,7 +2,7 @@ import Foundation
 
 class MockGameFactory: GameFactory {
     private var nextGameIndex: Int = 0
-    private var games: [Game]
+    private(set) var games: [Game]
 
     required init() async throws {
         self.games = try await Self.decodeGames()
