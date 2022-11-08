@@ -7,28 +7,34 @@ struct SuggestionView: View {
 
     var body: some View {
         ZStack(alignment: .center) {
-            VStack(spacing: 0) {
-                if !isSuggestionOpen {
-                    Text("suggestion")
-                        .font(.App.footnote)
-                        .offset(x: 35)
+            if isSuggestionOpen {
+                Color.black.opacity(0.5)
+            }
+
+            ZStack(alignment: .center) {
+                VStack(spacing: 0) {
+                    if !isSuggestionOpen {
+                        Text("suggestion")
+                            .font(.App.footnote)
+                            .offset(x: 35)
+                    }
+
+                    ColoredImage(imageName: "baiacu")
                 }
 
-                ColoredImage(imageName: "baiacu")
+                if isTextShowing {
+                    Text(text)
+                        .font(.App.paragraph)
+                        .frame(maxWidth: 300)
+                        .offset(y: -40)
+                }
             }
-
-            if isTextShowing {
-                Text(text)
-                    .font(.App.paragraph)
-                    .frame(maxWidth: 300)
-                    .offset(y: -40)
-            }
+            .frame(
+                width: isSuggestionOpen ? 520 : 100,
+                height: isSuggestionOpen ? 520 : 100
+            )
+            .position(framePosition)
         }
-        .frame(
-            width: isSuggestionOpen ? 520 : 100,
-            height: isSuggestionOpen ? 520 : 100
-        )
-        .position(framePosition)
         .onTapGesture {
             if isSuggestionOpen {
                 isTextShowing = false
