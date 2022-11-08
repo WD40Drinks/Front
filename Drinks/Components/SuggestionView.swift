@@ -7,7 +7,16 @@ struct SuggestionView: View {
 
     var body: some View {
         ZStack(alignment: .center) {
-            ColoredImage(imageName: "baiacu")
+            VStack(spacing: 0) {
+                if !isSuggestionOpen {
+                    Text("suggestion")
+                        .font(.App.footnote)
+                        .offset(x: 35)
+                }
+
+                ColoredImage(imageName: "baiacu")
+            }
+
             if isTextShowing {
                 Text(text)
                     .font(.App.paragraph)
