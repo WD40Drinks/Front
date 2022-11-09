@@ -1,11 +1,14 @@
 import Foundation
 
 class MockGameFactory: GameFactory {
+    static let key = "disabled_games"
+
     private var nextGameIndex: Int = 0
     private(set) var games: [Game]
 
     required init() async throws {
         self.games = try await Self.decodeGames()
+        setDisabledGames()
     }
 
     private var disabledGamesIndex: [Int] = []
@@ -16,11 +19,25 @@ class MockGameFactory: GameFactory {
         }
 
         if disabledGamesIndex.contains(idx) {
+            // enable
             disabledGamesIndex.removeAll { $0 == idx }
+            UserDefaults.standard.removeAll(where: { ($0 as? String) == game.name }, forKey: Self.key)
         } else {
+            // disable
             disabledGamesIndex.append(idx)
+            UserDefaults.standard.append(game.name, forKey: Self.key)
+        }
+    }
+
+    private func setDisabledGames() {
+        guard
+            let array = UserDefaults.standard.array(forKey: Self.key),
+            let disabledGamesName = array as? [String]
+        else {
+            return
         }
 
+        disabledGamesIndex = games.indices.filter { disabledGamesName.contains(games[$0].name) }
     }
 
     func nextGame() throws -> Game {
@@ -28,7 +45,7 @@ class MockGameFactory: GameFactory {
             throw GameFactoryError.emptyGameSource
         }
 
-        if disabledGamesIndex.contains(nextGameIndex) {
+        while disabledGamesIndex.contains(nextGameIndex) {
             nextGameIndex += 1
         }
 

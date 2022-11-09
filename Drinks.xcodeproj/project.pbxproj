@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3637B4291BCF550013A814 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3637B3291BCF550013A814 /* UserDefaults.swift */; };
 		3F3B3E0E29194B820095E964 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B3E0D29194B820095E964 /* ConfigurationView.swift */; };
 		3FF5929C28F9901100628C52 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5929828F9901100628C52 /* GridView.swift */; };
 		3FF5929D28F9901100628C52 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F3637B3291BCF550013A814 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		3F3B3E0D29194B820095E964 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		3FF5929828F9901100628C52 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				A7A8D2C828EEFD14003AB3F3 /* GameFactory */,
 				A7029D1628E474CC00FBFF32 /* Game.swift */,
 				A71E224328F4408C00A03382 /* Locale.swift */,
+				3F3637B3291BCF550013A814 /* UserDefaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				A7F91AE3290037AB00B74C39 /* ErrorView.swift in Sources */,
 				A7B1AD5F28E5C39A004B06C0 /* MockGameFactory.swift in Sources */,
 				A7C8919028FEE78B00A8DC13 /* ColoredImage.swift in Sources */,
+				3F3637B4291BCF550013A814 /* UserDefaults.swift in Sources */,
 				3F3B3E0E29194B820095E964 /* ConfigurationView.swift in Sources */,
 				3FF5929F28F9901100628C52 /* Typography.swift in Sources */,
 				A7B1AD5A28E5BD4A004B06C0 /* GameFactory.swift in Sources */,

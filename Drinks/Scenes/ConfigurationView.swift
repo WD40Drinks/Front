@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct GameToggleView: View {
-    @State var enabled: Bool = true
-
     let game: Game
+
+    @State var enabled: Bool
     let action: () -> Void
 
     var body: some View {
@@ -25,7 +25,7 @@ struct ConfigurationView: View {
             List {
                 Section {
                     ForEach(viewModel.games, id: \.name) { game in
-                        GameToggleView(game: game, action: {
+                        GameToggleView(game: game, enabled: game.enabled, action: {
                             viewModel.toggleGameEnabled(game)
                         })
                     }
