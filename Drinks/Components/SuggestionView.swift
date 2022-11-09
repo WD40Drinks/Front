@@ -35,14 +35,16 @@ struct SuggestionView: View {
             )
             .position(framePosition)
         }
-        .onTapGesture {
-            if isSuggestionOpen {
-                isTextShowing = false
-                withAnimation { isSuggestionOpen = false }
-            } else {
-                withAnimation { isSuggestionOpen = true }
-                withAnimation(.easeIn.delay(0.3)) { isTextShowing = true }
-            }
+        .onTapGesture(perform: openCloseGesture)
+    }
+
+    private func openCloseGesture() {
+        if isSuggestionOpen {
+            isTextShowing = false
+            withAnimation { isSuggestionOpen = false }
+        } else {
+            withAnimation { isSuggestionOpen = true }
+            withAnimation(.easeIn.delay(0.3)) { isTextShowing = true }
         }
     }
 
