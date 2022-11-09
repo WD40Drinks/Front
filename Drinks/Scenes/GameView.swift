@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GameView: View {
     @State private var isRulesOpen = false
+    @State private var isShowingSuggestion = false
     let game: Game
 
     var body: some View {
@@ -21,6 +22,9 @@ struct GameView: View {
             rulesModal
         }
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            withAnimation { isShowingSuggestion = true }
+        }
     }
 
     private var gameName: some View {
@@ -77,8 +81,12 @@ struct GameView: View {
 
     @ViewBuilder
     private var suggestion: some View {
-        if let suggestion = game.suggestions?.randomElement() {
+        if
+            isShowingSuggestion,
+            let suggestion = game.suggestions?.randomElement()
+        {
             SuggestionView(text: suggestion)
+                .transition(.push(from: .leading))
         }
     }
 
