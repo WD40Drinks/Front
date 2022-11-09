@@ -3,7 +3,6 @@ import SwiftUI
 struct GameView: View {
     @State private var isRulesOpen = false
     let game: Game
-    let nextButtonAction: () -> Void
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -18,7 +17,6 @@ struct GameView: View {
                 openRulesIndicator
             }
 
-            nextButton
             suggestion
             rulesModal
         }
@@ -75,24 +73,6 @@ struct GameView: View {
                 }
             )
         }
-    }
-
-    private var nextButton: some View {
-        VStack(spacing: 5) {
-            Text("next")
-                .font(.App.footnote)
-                .offset(x: -35)
-            Image("next-fish")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 122, height: 45)
-        }
-        .padding(10)
-        .onTapGesture(perform: self.nextButtonAction)
-        .position(
-            x: UIScreen.main.bounds.width,
-            y: UIScreen.main.bounds.height - 120
-        )
     }
 
     @ViewBuilder

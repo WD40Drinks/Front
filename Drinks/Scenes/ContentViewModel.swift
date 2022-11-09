@@ -42,6 +42,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         case .loaded(let factory, _):
             goToNextGame(factory: factory)
         default:
+            print("DEBUG: Could not go to next game in state different from loaded")
             return
         }
     }
@@ -59,13 +60,13 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
 
     private func setState(_ state: State) {
         DispatchQueue.main.async {
-            self.state = state
+            withAnimation { self.state = state }
         }
     }
 
     private func setColor(_ color: Color.App) {
         DispatchQueue.main.async {
-            self.color = color
+            withAnimation { self.color = color }
         }
     }
 }
