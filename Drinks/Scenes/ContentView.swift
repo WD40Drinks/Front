@@ -2,13 +2,12 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
-    @State private var isTransitioning = false
 
     var body: some View {
         GridView(color: viewModel.color) {
             switch viewModel.state {
             case .loaded(_, let game):
-                if !isTransitioning {
+                if !viewModel.isTransitioning {
                     GameView(game: game)
                         .transition(.push(from: .trailing))
                 }
@@ -24,7 +23,7 @@ struct ContentView: View {
 
     private var nextGameGesture: some Gesture {
         DragGesture().onEnded { value in
-            guard !isTransitioning else { return }
+            guard !viewModel.isTransitioning else { return }
             let didSwipeHorizontally = abs(value.translation.width) > abs(value.translation.height)
             let didSwipeLeft = value.predictedEndTranslation.width < -60
             if didSwipeHorizontally && didSwipeLeft {
@@ -34,12 +33,12 @@ struct ContentView: View {
     }
 
     private func transitionToNextGame() {
-        withAnimation { isTransitioning = true }
+        withAnimation { viewModel.isTransitioning = true }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             viewModel.goToNextGame()
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            withAnimation { isTransitioning = false }
+            withAnimation { viewModel.isTransitioning = false }
         }
     }
 }

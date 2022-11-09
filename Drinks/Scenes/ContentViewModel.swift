@@ -9,6 +9,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
 
     @Published var state: State
     @Published var color: Color.App
+    @Published var isTransitioning = false
 
     init() {
         self.state = .loading
