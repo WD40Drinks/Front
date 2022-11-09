@@ -18,21 +18,29 @@ struct ContentView: View {
                 ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
             }
         }
-        .gesture(DragGesture().onChanged { value in
+        .gesture(nextGameGesture)
+        .appColor(viewModel.color)
+    }
+
+    private var nextGameGesture: some Gesture {
+        DragGesture().onEnded { value in
             guard !isTransitioning else { return }
             let didSwipeHorizontally = abs(value.translation.width) > abs(value.translation.height)
-            let didSwipeLeft = value.translation.width < -60
+            let didSwipeLeft = value.predictedEndTranslation.width < -60
             if didSwipeHorizontally && didSwipeLeft {
-                withAnimation { isTransitioning = true }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    viewModel.goToNextGame()
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                    withAnimation { isTransitioning = false }
-                }
+                transitionToNextGame()
             }
-        })
-        .appColor(viewModel.color)
+        }
+    }
+
+    private func transitionToNextGame() {
+        withAnimation { isTransitioning = true }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            viewModel.goToNextGame()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            withAnimation { isTransitioning = false }
+        }
     }
 }
 
