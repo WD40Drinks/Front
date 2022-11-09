@@ -9,57 +9,72 @@ struct GameView: View {
         ZStack(alignment: .top) {
             VStack(spacing: 0) {
                 Spacer()
-
-                Text(game.name)
-                    .font(.App.title)
-                    .multilineTextAlignment(.center)
-                    .frame(minHeight: 200)
-                    .padding(.horizontal, 32)
-
+                gameName
                 Spacer()
-
-                if let text = game.text {
-                    GameTextView(text: text)
-                        .offset(x: -30)
-                        .frame(minHeight: 180)
-
-                    Spacer()
-                }
-
-                ColoredImage(imageName: game.imageName)
-                    .frame(
-                        width: 0.355 * UIScreen.main.bounds.height,
-                        height: 0.237 * UIScreen.main.bounds.height
-                    )
-
+                gameText
+                gameImage
                 Spacer()
                 Spacer()
-
-                if game.rules != nil {
-                    openRulesIndicator
-                }
+                openRulesIndicator
             }
 
             nextButton
-
-            if let rules = game.rules {
-                RulesModalView(isOpen: $isRulesOpen, name: game.name, rules: rules)
-            }
+            suggestion
+            rulesModal
         }
         .edgesIgnoringSafeArea(.all)
     }
 
-    private var openRulesIndicator: some View {
-        VStack(spacing: 10) {
-            Image("modal-arrow")
-                .resizable()
-                .frame(width: 56, height: 15)
-            Text("rules")
-                .font(.App.paragraph)
+    private var gameName: some View {
+        Text(game.name)
+            .font(.App.title)
+            .multilineTextAlignment(.center)
+            .frame(minHeight: 200)
+            .padding(.horizontal, 32)
+    }
+
+    @ViewBuilder
+    private var gameText: some View {
+        if let text = game.text {
+            GameTextView(text: text)
+                .offset(x: -30)
+                .frame(minHeight: 180)
+
+            Spacer()
         }
-        .padding(.vertical, 20)
-        .padding(.horizontal, 60)
-        .onTapGesture { withAnimation { isRulesOpen.toggle() } }
+    }
+
+    private var gameImage: some View {
+        ColoredImage(imageName: game.imageName)
+            .frame(
+                width: 0.355 * UIScreen.main.bounds.height,
+                height: 0.237 * UIScreen.main.bounds.height
+            )
+    }
+
+    @ViewBuilder
+    private var openRulesIndicator: some View {
+        if game.rules != nil {
+            VStack(spacing: 10) {
+                Image("modal-arrow")
+                    .resizable()
+                    .frame(width: 56, height: 15)
+                Text("rules")
+                    .font(.App.paragraph)
+            }
+            .padding(.vertical, 20)
+            .padding(.horizontal, 60)
+            .onTapGesture { withAnimation { isRulesOpen.toggle() } }
+            .gesture(
+                DragGesture(minimumDistance: 50).onChanged { value in
+                    let didDragVertically = abs(value.translation.height) > abs(value.translation.width)
+                    let didDragUp = value.translation.height < 0
+                    if didDragVertically && didDragUp {
+                        withAnimation { isRulesOpen = true }
+                    }
+                }
+            )
+        }
     }
 
     private var nextButton: some View {
@@ -78,5 +93,19 @@ struct GameView: View {
             x: UIScreen.main.bounds.width,
             y: UIScreen.main.bounds.height - 120
         )
+    }
+
+    @ViewBuilder
+    private var suggestion: some View {
+        if let suggestion = game.suggestions?.randomElement() {
+            SuggestionView(text: suggestion)
+        }
+    }
+
+    @ViewBuilder
+    private var rulesModal: some View {
+        if let rules = game.rules {
+            RulesModalView(isOpen: $isRulesOpen, name: game.name, rules: rules)
+        }
     }
 }
