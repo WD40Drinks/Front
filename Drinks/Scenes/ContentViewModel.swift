@@ -15,6 +15,15 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         self.factory?.games ?? []
     }
 
+    var currentGameIsEnabled: Bool {
+        do {
+            return try factory?.currentGame().enabled ?? false
+        } catch {
+            print(error)
+            return false
+        }
+    }
+
     init() {
         self.state = .loading
         self.color = .red

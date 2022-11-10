@@ -11,7 +11,11 @@ struct ContentView: View {
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.black, viewModel.color.primary)
         })
-        .sheet(isPresented: $viewModel.presentConfiguration) {
+        .sheet(isPresented: $viewModel.presentConfiguration, onDismiss: {
+            if !viewModel.currentGameIsEnabled {
+                viewModel.goToNextGame()
+            }
+        }) {
             ConfigurationView(viewModel: viewModel)
         }
     }

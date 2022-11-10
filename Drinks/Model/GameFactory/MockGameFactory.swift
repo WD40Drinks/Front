@@ -11,6 +11,13 @@ class MockGameFactory: GameFactory {
         setDisabledGames()
     }
 
+    func currentGame() throws -> Game {
+        if let game = games.get(at: nextGameIndex - 1) {
+            return game
+        }
+        return try firstEnabledGame()
+    }
+
     private var disabledGamesIndex: [Int] = []
     func toggleGameEnabled(_ game: Game) {
         guard let idx = games.firstIndex(where: { game.name == $0.name }) else {
@@ -40,6 +47,13 @@ class MockGameFactory: GameFactory {
         disabledGamesIndex = games.indices.filter { disabledGamesName.contains(games[$0].name) }
     }
 
+    private func firstEnabledGame() throws -> Game {
+        guard let idx = games.indices.first(where: { !disabledGamesIndex.contains($0) }) else {
+            throw GameFactoryError.allGamesDisabled
+        }
+        return games[idx]
+    }
+
     func nextGame() throws -> Game {
         guard !games.isEmpty else {
             throw GameFactoryError.emptyGameSource
@@ -53,8 +67,9 @@ class MockGameFactory: GameFactory {
             nextGameIndex += 1
             return game
         } else {
-            nextGameIndex = 1
-            return games[0]
+            let game = try firstEnabledGame()
+            nextGameIndex = (games.firstIndex(where: { $0 == game }) ?? 0) + 1
+            return game
         }
     }
 
