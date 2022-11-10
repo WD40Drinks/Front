@@ -40,13 +40,18 @@ struct SuggestionView: View {
     }
 
     private var suggestionClosed: some View {
-        buildColoredImage(imageName: "suggestion")
-            .frame(width: 100, height: 100)
-            .position(x: 0, y: UIScreen.main.bounds.height - 120)
-            .onTapGesture {
-                withAnimation { isSuggestionOpen = true }
-                withAnimation(.easeIn.delay(0.3)) { isTextShowing = true }
-            }
+        VStack(spacing: 0) {
+            Text("suggestion")
+                .font(.App.footnote)
+                .offset(x: 35, y: 8)
+            buildColoredImage(imageName: "suggestion")
+                .frame(width: 100, height: 100)
+        }
+        .position(x: 0, y: UIScreen.main.bounds.height - 120)
+        .onTapGesture {
+            withAnimation { isSuggestionOpen = true }
+            withAnimation(.easeIn.delay(0.3)) { isTextShowing = true }
+        }
     }
 
     @ViewBuilder

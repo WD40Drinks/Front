@@ -99,6 +99,7 @@ struct GameView: View {
     private var suggestion: some View {
         if let suggestion = game.suggestions?.randomElement() {
             SuggestionView(text: suggestion)
+                .zIndex(5) // fix open/close animation bug
         }
     }
 
