@@ -24,7 +24,10 @@ struct ConfigurationView: View {
         NavigationView {
             List {
                 Section {
-                    ForEach(viewModel.games, id: \.name) { game in
+                    ForEach(
+                        viewModel.games.sorted { $0.name < $1.name },
+                        id: \.name
+                    ) { game in
                         GameToggleView(game: game, enabled: game.enabled, action: {
                             viewModel.toggleGameEnabled(game)
                         })
