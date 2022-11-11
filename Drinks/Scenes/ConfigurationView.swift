@@ -16,24 +16,31 @@ struct GameToggleView: View {
 
 struct ConfigurationView: View {
     @State var teste: Bool = false
-//    var games: [Game]
-    @StateObject var viewModel: ContentViewModel<MockGameFactory>
+    @ObservedObject var viewModel: ContentViewModel<MockGameFactory>
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
         NavigationView {
             List {
-                Section {
-                    ForEach(
-                        viewModel.games.sorted { $0.name < $1.name },
-                        id: \.name
-                    ) { game in
-                        GameToggleView(game: game, enabled: game.enabled, action: {
-                            viewModel.toggleGameEnabled(game)
-                        })
+                if case let .loaded(factory, _) = viewModel.state {
+
+                    Section {
+                        ForEach(
+                            factory.games.sorted { $0.name < $1.name },
+                            id: \.name
+                        ) { game in
+                            GameToggleView(
+                                game: game,
+                                enabled: factory.settings.enabledGames.contains(game),
+                                action: {
+                                    factory.settings.toggle(game)
+                                }
+                            )
+                        }
+                    } header: {
+                        Text("games")
                     }
-                } header: {
-                    Text("games")
+
                 }
             }
             .listStyle(.insetGrouped)

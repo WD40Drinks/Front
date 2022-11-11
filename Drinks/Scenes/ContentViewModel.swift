@@ -10,19 +10,6 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     @Published var state: State
     @Published var color: Color.App
     @Published var presentConfiguration: Bool
-    private var factory: GameFactory?
-    var games: [Game] {
-        self.factory?.games ?? []
-    }
-
-    var currentGameIsEnabled: Bool {
-        do {
-            return try factory?.currentGame().enabled ?? false
-        } catch {
-            print(error)
-            return false
-        }
-    }
 
     init() {
         self.state = .loading
@@ -48,7 +35,6 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
                 return
             }
 
-            self.factory = factory
             goToNextGame(factory: factory)
         }
     }
@@ -72,17 +58,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         setState(.loaded(factory, nextGame))
         setColor(.random)
     }
-
-    func toggleGameEnabled(_ game: Game) {
-        guard let factory else {
-            // TODO: Devo settar erro?
-            print("DEBUG: failed finding game factory")
-            return
-        }
-
-        factory.toggleGameEnabled(game)
-    }
-
+    
     private func setState(_ state: State) {
         DispatchQueue.main.async {
             self.state = state

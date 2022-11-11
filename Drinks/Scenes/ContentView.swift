@@ -4,20 +4,30 @@ struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
 
     var configurationButton: some View {
-        Button(action: {
-            viewModel.presentConfiguration.toggle()
-        }, label: {
-            Image("gearshape.stroke")
-                .symbolRenderingMode(.palette)
-                .foregroundStyle(.black, viewModel.color.primary)
-        })
-        .sheet(isPresented: $viewModel.presentConfiguration, onDismiss: {
-            if !viewModel.currentGameIsEnabled {
-                viewModel.goToNextGame()
+        Button(
+            action: {
+                viewModel.presentConfiguration.toggle()
+            },
+            label: {
+                Image("gearshape.stroke")
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.black, viewModel.color.primary)
             }
-        }) {
-            ConfigurationView(viewModel: viewModel)
-        }
+        )
+        .sheet(
+            isPresented: $viewModel.presentConfiguration,
+            onDismiss: {
+                if
+                    case .loaded(let factory, let game) = viewModel.state,
+                    !factory.settings.enabledGames.contains(game)
+                {
+                    viewModel.goToNextGame()
+                }
+            },
+            content: {
+                ConfigurationView(viewModel: viewModel)
+            }
+        )
     }
 
     var body: some View {
