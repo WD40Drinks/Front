@@ -18,10 +18,23 @@ struct ConfigurationView: View {
     @State var teste: Bool = false
     @ObservedObject var viewModel: ContentViewModel<MockGameFactory>
     @Environment(\.dismiss) var dismiss
+    private let rangeOfPlayers: ClosedRange<Int> = 0...10
 
     var body: some View {
         NavigationView {
             List {
+
+                Section {
+                    Picker("num-players", selection: $viewModel.numOfPlayers) {
+                        ForEach(rangeOfPlayers, id: \.self) { value in
+                            Text("\(value)").tag(value)
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                } header: {
+                    Text("num-players")
+                }
+
                 if case let .loaded(factory, _) = viewModel.state {
 
                     Section {
