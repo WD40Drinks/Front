@@ -9,14 +9,39 @@ struct ContentView: View {
             case .onboarding:
                 OnboardingView(nextButtonAction: viewModel.goToNextGame)
             case .loaded(_, let game):
-                GameView(game: game, nextButtonAction: viewModel.goToNextGame)
+                if !viewModel.isTransitioning {
+                    GameView(game: game)
+                        .transition(.push(from: .trailing))
+                }
             case .loading:
                 ProgressView()
             case .error:
                 ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
             }
         }
+        .gesture(nextGameGesture)
         .appColor(viewModel.color)
+    }
+
+    private var nextGameGesture: some Gesture {
+        DragGesture().onEnded { value in
+            guard !viewModel.isTransitioning else { return }
+            let didSwipeHorizontally = abs(value.translation.width) > abs(value.translation.height)
+            let didSwipeLeft = value.predictedEndTranslation.width < -60
+            if didSwipeHorizontally && didSwipeLeft {
+                transitionToNextGame()
+            }
+        }
+    }
+
+    private func transitionToNextGame() {
+        withAnimation { viewModel.isTransitioning = true }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            viewModel.goToNextGame()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            withAnimation { viewModel.isTransitioning = false }
+        }
     }
 }
 
