@@ -6,6 +6,8 @@ struct ContentView: View {
     var body: some View {
         GridView(color: viewModel.color) {
             switch viewModel.state {
+            case .onboarding:
+                OnboardingView(nextButtonAction: viewModel.goToNextGame)
             case .loaded(_, let game):
                 GameView(game: game, nextButtonAction: viewModel.goToNextGame)
             case .loading:

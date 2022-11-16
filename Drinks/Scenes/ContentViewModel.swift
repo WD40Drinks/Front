@@ -4,6 +4,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     enum State {
         case loading
         case error
+        case onboarding
         case loaded(Factory, Game)
     }
 
@@ -53,7 +54,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
             return
         }
 
-        setState(.loaded(factory, nextGame))
+        setState(.onboarding)
         setColor(.random)
     }
 
