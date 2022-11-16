@@ -108,6 +108,7 @@ struct TermsSheetView: View {
 }
 
 struct SwipeView: View {
+    @State private var isRotating = 0.0
     var viewModel: ContentViewModel<MockGameFactory>
 
     var animation: Animation {
@@ -125,9 +126,20 @@ struct SwipeView: View {
                 .padding(.bottom, 60)
             HStack {
                 Spacer()
-                Image("swipe-gesture")
-                    .animation(animation)
-                    .padding(.trailing, 20)
+                VStack {
+                    Image("arrow-left")
+                    Image("swipe-gesture")
+                        .animation(animation)
+                        .padding(.trailing, 20)
+                        .rotationEffect(.degrees(isRotating))
+                        .onAppear {
+                            withAnimation(.linear(duration: 1)
+                                .speed(0.7).repeatForever(autoreverses: false)) {
+                                    isRotating = -45.0
+                                }
+                        }
+                }
+
             }
 
         }
