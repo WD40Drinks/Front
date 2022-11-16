@@ -121,9 +121,17 @@ struct SwipeView: View {
             Text("junte a galera numa roda")
                 .font(.App.paragraph)
                 .padding(.bottom, 40)
-            Text("Arrasta pro próximo jogo")
-                .font(.App.title)
-                .padding(.bottom, 60)
+            VStack(spacing: 8) {
+                Text("Arrasta pro próximo jogo")
+                    .font(.App.title)
+                Image("text-highlight")
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(.App.yellow.primary)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 140)
+            }
+            .padding(.bottom, 60)
             HStack {
                 Spacer()
                 VStack {
