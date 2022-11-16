@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3104CAB1291BEB9A0013D509 /* TermsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104CAB0291BEB9A0013D509 /* TermsModalView.swift */; };
 		31F26398291A9A2400BB8845 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F26397291A9A2400BB8845 /* OnboardingView.swift */; };
 		3FF5929C28F9901100628C52 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5929828F9901100628C52 /* GridView.swift */; };
 		3FF5929D28F9901100628C52 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */; };
@@ -57,7 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3104CAB0291BEB9A0013D509 /* TermsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsModalView.swift; sourceTree = "<group>"; };
 		31F26397291A9A2400BB8845 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3FF5929828F9901100628C52 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 				A7C8918B28FECDE700A8DC13 /* GameTextView.swift */,
 				3FF5929828F9901100628C52 /* GridView.swift */,
 				A7F91AE429003D3800B74C39 /* RulesModalView.swift */,
-				3104CAB0291BEB9A0013D509 /* TermsModalView.swift */,
 				A7066F26291943CA002953A8 /* SuggestionView.swift */,
 			);
 			path = Components;
@@ -432,7 +429,6 @@
 				A7F91AE12900367D00B74C39 /* GameView.swift in Sources */,
 				A7029D1728E474CC00FBFF32 /* Game.swift in Sources */,
 				A7B1AD5D28E5C102004B06C0 /* Collection.swift in Sources */,
-				3104CAB1291BEB9A0013D509 /* TermsModalView.swift in Sources */,
 				A7F91AE529003D3800B74C39 /* RulesModalView.swift in Sources */,
 				A730C83B28E1EA41007A2097 /* DrinksApp.swift in Sources */,
 				A7F91AE3290037AB00B74C39 /* ErrorView.swift in Sources */,

@@ -6,13 +6,13 @@ struct OnboardingView: View {
         case swipe
     }
 
+    var viewModel: ContentViewModel<MockGameFactory>
     @State private var state: OnboardingStates = .terms
-    let nextButtonAction: () -> Void
 
     var body: some View {
         switch state {
         case .terms: TermsView(continueButtonAction: changeOnboardingState)
-        case .swipe: SwipeView()
+        case .swipe: SwipeView(viewModel: viewModel)
         }
     }
 
@@ -97,6 +97,8 @@ struct TermsSheetView: View {
 }
 
 struct SwipeView: View {
+    var viewModel: ContentViewModel<MockGameFactory>
+
     var body: some View {
         VStack {
             Text("junte a galera numa roda")
@@ -105,6 +107,9 @@ struct SwipeView: View {
                 .font(.App.title)
             Image("swipe-gesture")
         }
-        
+        .onTapGesture {
+            viewModel.initiateGame()
+            print("Tapped to change view")
+        }
     }
 }

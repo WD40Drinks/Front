@@ -15,6 +15,14 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     init() {
         self.state = .loading
         self.color = .red
+        initiateOnboarding()
+    }
+
+    func initiateOnboarding() {
+        setState(.onboarding)
+    }
+
+    func initiateGame() {
         createFactory()
     }
 
@@ -56,14 +64,15 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
             return
         }
 
-        setState(.onboarding)
+        setState(.loaded(factory, nextGame))
         setColor(.random)
     }
 
-    private func setState(_ state: State) {
+    func setState(_ state: State) {
         DispatchQueue.main.async {
             withAnimation { self.state = state }
         }
+        print("change state to \(state)")
     }
 
     private func setColor(_ color: Color.App) {
