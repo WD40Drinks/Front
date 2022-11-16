@@ -12,7 +12,6 @@ struct ContentView: View {
                 if !viewModel.isTransitioning {
                     GameView(game: game)
                         .transition(.push(from: .trailing))
-                        .gesture(nextGameGesture)
                 }
             case .loading:
                 ProgressView()
@@ -20,6 +19,7 @@ struct ContentView: View {
                 ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
             }
         }
+        .gesture(nextGameGesture)
         .appColor(viewModel.color)
     }
 
