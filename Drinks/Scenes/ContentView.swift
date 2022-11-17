@@ -2,20 +2,56 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
+    @State private var presentConfiguration = false
+
+    var topBar: some View {
+        VStack {
+            HStack {
+                Button(
+                    action: {
+                        presentConfiguration.toggle()
+                    },
+                    label: {
+                        Image("gearshape.stroke")
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.black, viewModel.color.primary)
+                            .font(.title)
+                    }
+                )
+                .sheet(
+                    isPresented: $presentConfiguration,
+                    onDismiss: viewModel.goToNextGameIfDisabled,
+                    content: {
+                        ConfigurationView(viewModel: viewModel)
+                    }
+                )
+
+                Spacer()
+            }
+            Spacer()
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 60)
+        .edgesIgnoringSafeArea(.all)
+    }
 
     var body: some View {
         GridView(color: viewModel.color) {
-            switch viewModel.state {
-            case .loaded(_, let game):
-                if !viewModel.isTransitioning {
-                    GameView(game: game)
-                        .transition(.push(from: .trailing))
+            ZStack(alignment: .top) {
+                switch viewModel.state {
+                case .loaded(_, let game):
+                    topBar
+                    if !viewModel.isTransitioning {
+                        GameView(game: game)
+                            .transition(.push(from: .trailing))
+                    }
+                case .loading:
+                    ProgressView()
+                case .error:
+                    ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
                 }
-            case .loading:
-                ProgressView()
-            case .error:
-                ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
             }
+
         }
         .gesture(nextGameGesture)
         .appColor(viewModel.color)

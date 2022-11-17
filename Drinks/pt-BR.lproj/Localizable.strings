@@ -4,3 +4,6 @@
 "rules" = "regras";
 "close" = "fechar";
 "suggestion" = "sugestão";
+"games" = "Jogos";
+"configs" = "Configurações";
+"num-players" = "Número de jogadores";

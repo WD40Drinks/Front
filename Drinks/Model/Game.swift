@@ -1,6 +1,6 @@
 import Foundation
 
-struct Game: Decodable {
+struct Game: Decodable, Equatable {
     let name: String
     let text: String?
     let imageName: String

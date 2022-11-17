@@ -9,11 +9,15 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
 
     @Published var state: State
     @Published var color: Color.App
+    @Published var numOfPlayers: Int
+    @Published var numOfEnabledGames: Int
     @Published var isTransitioning = false
 
     init() {
         self.state = .loading
         self.color = .red
+        self.numOfPlayers = 5
+        self.numOfEnabledGames = 0
         createFactory()
     }
 
@@ -26,12 +30,25 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         }
     }
 
+    func goToNextGameIfDisabled() {
+        if
+            case .loaded(let factory, let game) = state,
+            !factory.settings.enabledGames.contains(game)
+        {
+            goToNextGame()
+        }
+    }
+
     private func createFactory() {
         Task {
             guard let factory = try? await Factory() else {
                 print("DEBUG: failed creating game factory")
                 setState(.error)
                 return
+            }
+
+            DispatchQueue.main.async {
+                self.numOfEnabledGames = factory.settings.enabledGames.count
             }
 
             goToNextGame(factory: factory)

@@ -2,23 +2,26 @@ import Foundation
 
 class MockGameFactory: GameFactory {
     private var nextGameIndex: Int = 0
-    private var games: [Game]
+    private(set) var games: [Game]
+
+    let settings: GameSettings
 
     required init() async throws {
         self.games = try await Self.decodeGames()
+        self.settings = GameSettings(games: games)
     }
 
     func nextGame() throws -> Game {
-        guard !games.isEmpty else {
+        guard !settings.enabledGames.isEmpty else {
             throw GameFactoryError.emptyGameSource
         }
 
-        if let game = games.get(at: nextGameIndex) {
+        if let game = settings.enabledGames.get(at: nextGameIndex) {
             nextGameIndex += 1
             return game
         } else {
             nextGameIndex = 1
-            return games[0]
+            return settings.enabledGames[0]
         }
     }
 
