@@ -9,7 +9,6 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
 
     @Published var state: State
     @Published var color: Color.App
-    @Published var presentConfiguration: Bool
     @Published var numOfPlayers: Int
     @Published var numOfEnabledGames: Int
     @Published var isTransitioning = false
@@ -17,7 +16,6 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     init() {
         self.state = .loading
         self.color = .red
-        self.presentConfiguration = false
         self.numOfPlayers = 5
         self.numOfEnabledGames = 0
         createFactory()

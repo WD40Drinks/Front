@@ -2,24 +2,24 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
+    @State private var presentConfiguration = false
 
     var topBar: some View {
         VStack {
             HStack {
-
                 Button(
                     action: {
-                        viewModel.presentConfiguration.toggle()
+                        presentConfiguration.toggle()
                     },
                     label: {
                         Image("gearshape.stroke")
                             .symbolRenderingMode(.palette)
                             .foregroundStyle(.black, viewModel.color.primary)
-                            .font(.title2)
+                            .font(.title)
                     }
                 )
                 .sheet(
-                    isPresented: $viewModel.presentConfiguration,
+                    isPresented: $presentConfiguration,
                     onDismiss: viewModel.goToNextGameIfDisabled,
                     content: {
                         ConfigurationView(viewModel: viewModel)
