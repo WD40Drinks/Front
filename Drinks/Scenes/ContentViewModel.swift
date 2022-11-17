@@ -72,7 +72,6 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         DispatchQueue.main.async {
             withAnimation { self.state = state }
         }
-        print("change state to \(state)")
     }
 
     private func setColor(_ color: Color.App) {
