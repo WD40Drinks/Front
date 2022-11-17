@@ -3,34 +3,47 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
 
-    var configurationButton: some View {
-        Button(
-            action: {
-                viewModel.presentConfiguration.toggle()
-            },
-            label: {
-                Image("gearshape.stroke")
-                    .symbolRenderingMode(.palette)
-                    .foregroundStyle(.black, viewModel.color.primary)
+    var topBar: some View {
+        VStack {
+            HStack {
+
+                Button(
+                    action: {
+                        viewModel.presentConfiguration.toggle()
+                    },
+                    label: {
+                        Image("gearshape.stroke")
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.black, viewModel.color.primary)
+                            .font(.title2)
+                    }
+                )
+                .sheet(
+                    isPresented: $viewModel.presentConfiguration,
+                    onDismiss: viewModel.goToNextGameIfDisabled,
+                    content: {
+                        ConfigurationView(viewModel: viewModel)
+                    }
+                )
+
+                Spacer()
             }
-        )
-        .sheet(
-            isPresented: $viewModel.presentConfiguration,
-            onDismiss: viewModel.goToNextGameIfDisabled,
-            content: {
-                ConfigurationView(viewModel: viewModel)
-            }
-        )
+            Spacer()
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 60)
+        .edgesIgnoringSafeArea(.all)
     }
 
     var body: some View {
-        NavigationView {
-            GridView(color: viewModel.color) {
+        GridView(color: viewModel.color) {
+            ZStack(alignment: .top) {
                 switch viewModel.state {
                 case .loaded(_, let game):
+                    topBar
                     if !viewModel.isTransitioning {
-                    GameView(game: game)
-                        .transition(.push(from: .trailing))
+                        GameView(game: game)
+                            .transition(.push(from: .trailing))
                     }
                 case .loading:
                     ProgressView()
@@ -38,14 +51,10 @@ struct ContentView: View {
                     ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
                 }
             }
-            .gesture(nextGameGesture)
-            .appColor(viewModel.color)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    configurationButton
-                }
-            }
+
         }
+        .gesture(nextGameGesture)
+        .appColor(viewModel.color)
     }
 
     private var nextGameGesture: some Gesture {
