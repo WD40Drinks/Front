@@ -18,5 +18,6 @@ extension Font {
         static let title = appFont(size: 56)
         static let paragraph = appFont(size: 24)
         static let footnote = appFont(size: 14)
+        static let prompt = Font.system(size: 40)
     }
 }

@@ -20,6 +20,7 @@ struct GameView: View {
 
             suggestion
             rulesModal
+            PromptView()
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear {
