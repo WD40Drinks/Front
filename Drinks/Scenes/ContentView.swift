@@ -16,14 +16,7 @@ struct ContentView: View {
         )
         .sheet(
             isPresented: $viewModel.presentConfiguration,
-            onDismiss: {
-                if
-                    case .loaded(let factory, let game) = viewModel.state,
-                    !factory.settings.enabledGames.contains(game)
-                {
-                    viewModel.goToNextGame()
-                }
-            },
+            onDismiss: viewModel.goToNextGameIfDisabled,
             content: {
                 ConfigurationView(viewModel: viewModel)
             }

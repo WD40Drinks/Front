@@ -9,13 +9,14 @@ struct GameToggleView: View {
     var body: some View {
         Toggle(game.name, isOn: $enabled)
             .onChange(of: enabled) { _ in
-                action()
+                DispatchQueue.main.async {
+                    action()
+                }
             }
     }
 }
 
 struct ConfigurationView: View {
-    @State var teste: Bool = false
     @ObservedObject var viewModel: ContentViewModel<MockGameFactory>
     @Environment(\.dismiss) var dismiss
     private let rangeOfPlayers: ClosedRange<Int> = 0...10
@@ -36,7 +37,6 @@ struct ConfigurationView: View {
                 }
 
                 if case let .loaded(factory, _) = viewModel.state {
-
                     Section {
                         ForEach(
                             factory.games.sorted { $0.name < $1.name },
@@ -47,7 +47,12 @@ struct ConfigurationView: View {
                                 enabled: factory.settings.enabledGames.contains(game),
                                 action: {
                                     factory.settings.toggle(game)
+                                    viewModel.numOfEnabledGames = factory.settings.enabledGames.count
                                 }
+                            )
+                            .disabled(
+                                factory.settings.enabledGames.contains(game) &&
+                                viewModel.numOfEnabledGames == 1
                             )
                         }
                     } header: {
