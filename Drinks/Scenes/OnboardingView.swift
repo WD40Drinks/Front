@@ -25,6 +25,7 @@ struct TermsView: View {
     @State private var showingTermsSheet = false
     let continueButtonAction: () -> Void
 
+
     var body: some View {
         VStack {
             VStack {
@@ -38,13 +39,13 @@ struct TermsView: View {
                     .multilineTextAlignment(.center)
                     .frame(minHeight: 200)
             }
-            Text("ao continuar você concorda com os termos e condições")
+            Text("continue-conditions")
                 .font(.App.paragraph)
                 .multilineTextAlignment(.center)
             VStack(spacing: 22) {
                 ZStack {
                     Image("button-fill")
-                    Text("Continuar")
+                    Text("continue-button")
                         .font(.App.paragraph)
                 }
                 .onTapGesture {
@@ -52,7 +53,7 @@ struct TermsView: View {
                 }
                 ZStack {
                     Image("button")
-                    Text("Ler termos")
+                    Text("read-terms-button")
                         .font(.App.paragraph)
                 }
                 .onTapGesture {
@@ -74,19 +75,17 @@ struct TermsSheetView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 8) {
-                Text("1. ESSE JOGO É DESTINADO PARA MAIORES DE 18 ANOS ")
-                // swiftlint:disable:next line_length
-                Text("O consumo de álcool por menores pode acarretar problemas legais (para menores e para aqueles que oferecem álcool), atrapalhar o desenvolvimento cerebral e sexual além de interromper o crescimento.")
-                Text("(Underage drinking, Center for Disease Control and Prevention)")
+                Text("terms-title-one")
+                Text("terms-text-one")
+                Text("terms-subtext-one")
             }
             VStack(alignment: .leading, spacing: 8) {
-                Text("2. SE BEBER NÃO DIRIJA")
-                // swiftlint:disable:next line_length
-                Text("O álcool reduz a capacidade de julgamento de velocidade e distância, aumenta a tendência de tomar riscos, reduz a coordenação e concentração, aumenta o tempo de reação, prejudica a visão e a percepção de obstáculos.")
-                Text("(Behind the wheel: the dangers of drink driving, DrinkWise)")
+                Text("terms-title-two")
+                Text("terms-text-two")
+                Text("terms-subtext-two")
             }
             VStack(alignment: .leading) {
-                Text("3. RESPEITE OS SEUS LIMITES E OS LIMITES DOS OUTROS JOGADORES")
+                Text("terms-title-three")
             }
             HStack {
                 Spacer()
@@ -118,11 +117,11 @@ struct SwipeView: View {
 
     var body: some View {
         VStack {
-            Text("junte a galera numa roda")
+            Text("gather-circle")
                 .font(.App.paragraph)
                 .padding(.bottom, 40)
             VStack(spacing: 8) {
-                Text("Arrasta pro próximo jogo")
+                Text("swipe-next")
                     .font(.App.title)
                 Image("text-highlight")
                     .resizable()

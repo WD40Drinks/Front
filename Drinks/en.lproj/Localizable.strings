@@ -4,3 +4,15 @@
 "rules" = "rules";
 "close" = "close";
 "suggestion" = "suggestion";
+"continue-conditions" = "by continuing you agree to the terms and conditions";
+"continue-button" = "Continue";
+"read-terms-button" = "Read terms";
+"gather-circle" = "gather people in a circle";
+"swipe-next" = "Swipe to the next game";
+"terms-title-one" = "1. THIS GAME IS INTENDED FOR OVER 18 YEARS OF AGE";
+"terms-text-one" = "Underage alcohol consumption can lead to legal problems (for minors and those offering alcohol), disrupt brain and sexual development, and stunt growth.";
+"terms-subtext-one" = "(Underage drinking, Center for Disease Control and Prevention)";
+"terms-title-two" = "2. IF YOU DRINK DON'T DRIVE";
+"terms-text-two" = "Alcohol reduces the ability to judge speed and distance, increases the tendency to take risks, reduces coordination and concentration, increases reaction time, impairs vision and the perception of obstacles.";
+"terms-subtext-two" = "(Behind the wheel: the dangers of drink driving, DrinkWise)";
+"terms-title-three" = "3. RESPECT YOUR LIMITS AND THE LIMITS OF OTHER PLAYERS";
