@@ -18,6 +18,8 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     init() {
         self.state = .loading
         self.color = .red
+        self.numOfPlayers = 5
+        self.numOfEnabledGames = 0
         initiateOnboarding()
     }
 
@@ -26,8 +28,6 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     }
 
     func initiateGame() {
-        self.numOfPlayers = 5
-        self.numOfEnabledGames = 0
         createFactory()
     }
 
