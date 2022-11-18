@@ -4,7 +4,8 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     enum State {
         case loading
         case error
-        case onboarding
+        case terms
+        case swipe
         case loaded(Factory, Game)
     }
 
@@ -19,7 +20,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     }
 
     func initiateOnboarding() {
-        setState(.onboarding)
+        setState(.terms)
     }
 
     func initiateGame() {

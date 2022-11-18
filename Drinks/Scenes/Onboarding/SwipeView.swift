@@ -11,6 +11,7 @@ struct SwipeView: View {
 
     var body: some View {
         VStack {
+            Spacer()
             Text("gather-circle")
                 .font(.App.paragraph)
                 .padding(.bottom, 40)
@@ -40,21 +41,8 @@ struct SwipeView: View {
                                 }
                         }
                 }
-
             }
-
-        }
-        .gesture(startGameGesture)
-    }
-
-    private var startGameGesture: some Gesture {
-        DragGesture().onEnded { value in
-            guard !viewModel.isTransitioning else { return }
-            let didSwipeHorizontally = abs(value.translation.width) > abs(value.translation.height)
-            let didSwipeLeft = value.predictedEndTranslation.width < -60
-            if didSwipeHorizontally && didSwipeLeft {
-                viewModel.initiateGame()
-            }
+            Spacer()
         }
     }
 }

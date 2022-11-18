@@ -6,8 +6,10 @@ struct ContentView: View {
     var body: some View {
         GridView(color: viewModel.color) {
             switch viewModel.state {
-            case .onboarding:
-                OnboardingView(viewModel: viewModel)
+            case .terms:
+                TermsView(viewModel: viewModel)
+            case .swipe:
+                SwipeView(viewModel: viewModel)
             case .loaded(_, let game):
                 if !viewModel.isTransitioning {
                     GameView(game: game)
@@ -29,7 +31,18 @@ struct ContentView: View {
             let didSwipeHorizontally = abs(value.translation.width) > abs(value.translation.height)
             let didSwipeLeft = value.predictedEndTranslation.width < -60
             if didSwipeHorizontally && didSwipeLeft {
-                transitionToNextGame()
+                switch viewModel.state {
+                case .terms:
+                    return
+                case .swipe:
+                    viewModel.initiateGame()
+                    // swiftlint:disable:next empty_enum_arguments
+                case .loaded(_, _):
+                    transitionToNextGame()
+                default:
+                    return
+                }
+
             }
         }
     }

@@ -10,7 +10,6 @@
 		31C13A93292677C60038F7A1 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C13A92292677C60038F7A1 /* TermsView.swift */; };
 		31C13A95292677F10038F7A1 /* TermsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C13A94292677F10038F7A1 /* TermsSheetView.swift */; };
 		31C13A97292678150038F7A1 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C13A96292678150038F7A1 /* SwipeView.swift */; };
-		31F26398291A9A2400BB8845 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F26397291A9A2400BB8845 /* OnboardingView.swift */; };
 		3FF5929C28F9901100628C52 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5929828F9901100628C52 /* GridView.swift */; };
 		3FF5929D28F9901100628C52 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */; };
 		3FF5929E28F9901100628C52 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5929A28F9901100628C52 /* Colors.swift */; };
@@ -62,7 +61,6 @@
 		31C13A92292677C60038F7A1 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		31C13A94292677F10038F7A1 /* TermsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsSheetView.swift; sourceTree = "<group>"; };
 		31C13A96292678150038F7A1 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
-		31F26397291A9A2400BB8845 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3FF5929828F9901100628C52 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		3FF5929928F9901100628C52 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
 		3FF5929A28F9901100628C52 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 		31C13A91292677A40038F7A1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				31F26397291A9A2400BB8845 /* OnboardingView.swift */,
 				31C13A92292677C60038F7A1 /* TermsView.swift */,
 				31C13A94292677F10038F7A1 /* TermsSheetView.swift */,
 				31C13A96292678150038F7A1 /* SwipeView.swift */,
@@ -437,7 +434,6 @@
 			files = (
 				A7029D1C28E4772600FBFF32 /* ContentViewModel.swift in Sources */,
 				3FF5929E28F9901100628C52 /* Colors.swift in Sources */,
-				31F26398291A9A2400BB8845 /* OnboardingView.swift in Sources */,
 				31C13A97292678150038F7A1 /* SwipeView.swift in Sources */,
 				A7066F27291943CA002953A8 /* SuggestionView.swift in Sources */,
 				A71E224428F4408C00A03382 /* Locale.swift in Sources */,

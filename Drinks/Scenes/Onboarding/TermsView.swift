@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TermsView: View {
     @State private var showingTermsSheet = false
-    let continueButtonAction: () -> Void
+    var viewModel: ContentViewModel<MockGameFactory>
 
     var body: some View {
         VStack {
@@ -27,7 +27,7 @@ struct TermsView: View {
                         .font(.App.paragraph)
                 }
                 .onTapGesture {
-                    continueButtonAction()
+                    viewModel.setState(.swipe)
                 }
                 ZStack {
                     Image("button")
