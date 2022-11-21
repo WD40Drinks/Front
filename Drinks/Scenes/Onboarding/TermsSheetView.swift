@@ -29,7 +29,7 @@ struct TermsSheetView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Ok") {
+                Button("OK") {
                     dismiss()
                 }
             }
