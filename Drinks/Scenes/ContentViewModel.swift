@@ -86,7 +86,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         setColor(.random)
     }
 
-    func setState(_ state: State) {
+    internal func setState(_ state: State) {
         DispatchQueue.main.async {
             withAnimation { self.state = state }
         }
