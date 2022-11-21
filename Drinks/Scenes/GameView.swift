@@ -3,6 +3,7 @@ import SwiftUI
 struct GameView: View {
     @State private var isRulesOpen = false
     @State private var isShowingSuggestion = false
+    @State private var isShowingPrompt = false
     let game: Game
 
     var body: some View {
@@ -14,13 +15,23 @@ struct GameView: View {
                 gameText
                 gameImage
                 Spacer()
+                Button(
+                    action: {
+                        isShowingPrompt.toggle()
+                    }, label: {
+                        Text("Prompt")
+                    }
+                )
                 Spacer()
                 openRulesIndicator
             }
 
             suggestion
             rulesModal
-            PromptView()
+            if isShowingPrompt {
+                PromptView()
+                    .background(.black.opacity(0.9))
+            }
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear {

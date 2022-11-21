@@ -21,3 +21,9 @@ extension Font {
         static let prompt = Font.system(size: 40)
     }
 }
+
+extension UIFont {
+    enum App {
+        static let prompt = UIFont.systemFont(ofSize: 40)
+    }
+}
