@@ -2,12 +2,40 @@ import SwiftUI
 
 struct PromptView: UIViewRepresentable {
 
-    func makeUIView(context: UIViewRepresentableContext<PromptView>) -> UITextView {
+    func makeUIView(context: UIViewRepresentableContext<PromptView>) -> UIView {
         let textView = PromptTextView()
-        return textView
+        let containerView = UIView()
+
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.translatesAutoresizingMaskIntoConstraints = true
+        containerView.addSubview(textView)
+
+        // we'll inset the textView by 8-points on all sides
+        //  so we can see that it's inside the container view
+
+        // avoid auto-layout error/warning messages
+        let cTrailing = textView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -64.0)
+        cTrailing.priority = .required - 1
+
+        let cBottom = textView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8.0)
+        cBottom.priority = .required - 1
+
+        NSLayoutConstraint.activate([
+
+            textView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8.0),
+            textView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 64.0),
+
+            // activate trailing and bottom constraints
+            cTrailing, cBottom
+
+        ])
+
+        containerView.transform = CGAffineTransform(rotationAngle: (CGFloat)(Double.pi/2))
+
+        return containerView
     }
 
-    func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<PromptView>) { }
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PromptView>) { }
 
 }
 
