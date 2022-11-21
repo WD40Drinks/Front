@@ -12,15 +12,17 @@ struct TermsView: View {
                         width: 0.355 * UIScreen.main.bounds.height,
                         height: 0.237 * UIScreen.main.bounds.height
                     )
+                    .padding(.top, 16)
                 Text("Caneco")
                     .font(.App.title)
                     .multilineTextAlignment(.center)
-                    .frame(minHeight: 200)
+                    .frame(minHeight: 150)
             }
             Text("continue-conditions")
+                .padding(.horizontal, 16)
                 .font(.App.paragraph)
                 .multilineTextAlignment(.center)
-            VStack(spacing: 22) {
+            VStack(spacing: 16) {
                 ZStack {
                     Image("button-fill")
                     Text("continue-button")
