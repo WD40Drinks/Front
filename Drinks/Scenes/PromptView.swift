@@ -13,64 +13,9 @@ struct PromptView: UIViewRepresentable {
     }
 
     func makeUIView(context: UIViewRepresentableContext<PromptView>) -> UIView {
-        containerView.translatesAutoresizingMaskIntoConstraints = true
-        containerView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
-
-        configurePromptText()
-        configureLabel()
-
-        scheduleAnimations()
-
-        return containerView
-    }
-
-    private func configurePromptText() {
-        promptTextView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(promptTextView)
-
-        NSLayoutConstraint.activate([
-            promptTextView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8.0),
-            promptTextView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8.0),
-            promptTextView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 64.0),
-            promptTextView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -64.0)
-        ])
-    }
-
-    private func configureLabel() {
-        label.text = NSLocalizedString("ready", comment: "")
-        label.textColor = .white
-        label.font = .App.promptTitle
-
-        label.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(label)
-
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
-        ])
-    }
-
-    private func scheduleAnimations() {
-        promptTextView.alpha = 0
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            UIView.animate(withDuration: 1.0) {
-                label.alpha = 0
-                label.text = NSLocalizedString("go", comment: "")
-                label.alpha = 1
-            }
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            UIView.animate(withDuration: 1.0) {
-                label.alpha = 0
-                promptTextView.alpha = 1
-            }
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-            promptTextView.startScrolling()
-        }
+        let view = PromptScrollView()
+        view.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
+        return view
     }
 
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PromptView>) { }
@@ -114,6 +59,82 @@ private class PromptTextView: UITextView {
         }
 
         scrollSpeed += 1
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private class PromptScrollView: UIView {
+
+    private var didUpdateConstraints = false
+
+    private let scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.spacing = UIScreen.main.bounds.width
+        return stack
+    }()
+
+    private let readyLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = NSLocalizedString("ready", comment: "")
+        label.textColor = .white
+        label.font = .App.promptTitle
+        return label
+    }()
+
+    private let textView: UILabel = {
+        let text = UILabel()
+        text.translatesAutoresizingMaskIntoConstraints = false
+        text.text = NSLocalizedString("prompt", comment: "")
+        text.textColor = .white
+        text.font = .App.prompt
+        text.numberOfLines = 0
+        return text
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(scrollView)
+        scrollView.addSubview(stackView)
+        stackView.addArrangedSubview(readyLabel)
+        stackView.addArrangedSubview(textView)
+    }
+
+    override func updateConstraints() {
+        guard !didUpdateConstraints else {
+            super.updateConstraints()
+            return
+        }
+
+        NSLayoutConstraint.activate([
+            scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor),
+            scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 64),
+            scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -64)
+        ])
+
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor, constant: UIScreen.main.bounds.width / 2 - 80),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
+
+        didUpdateConstraints = true
+        super.updateConstraints()
     }
 
     required init?(coder: NSCoder) {
