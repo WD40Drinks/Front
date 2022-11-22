@@ -16,12 +16,16 @@ class APIGameFactory: GameFactory {
     }
 
     func nextGame() throws -> Game {
-        if let game = games.get(at: nextGameIndex) {
+        guard !settings.enabledGames.isEmpty else {
+            throw GameFactoryError.emptyGameSource
+        }
+
+        if let game = settings.enabledGames.get(at: nextGameIndex) {
             nextGameIndex += 1
             return game
         } else {
             nextGameIndex = 1
-            return games[0]
+            return settings.enabledGames[0]
         }
     }
 

@@ -1,20 +1,20 @@
 import Foundation
 
 class GameSettings {
-    private static let key = "enabled_games"
+    private static let key = "enabled_games_id"
     private var settings: UserDefaults { UserDefaults.standard }
 
     private let games: [Game]
 
     private(set) var enabledGames: [Game] {
         get {
-            guard let names = settings.array(forKey: Self.key) as? [String] else {
+            guard let ids = settings.array(forKey: Self.key) as? [String] else {
                 return games
             }
-            return games.filter { names.contains($0.name) }
+            return games.filter { ids.contains($0.id.uuidString) }
         }
         set {
-            settings.set(newValue.map { $0.name }, forKey: Self.key)
+            settings.set(newValue.map { $0.id.uuidString }, forKey: Self.key)
         }
     }
 
