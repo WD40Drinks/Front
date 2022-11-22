@@ -2,35 +2,61 @@ import SwiftUI
 
 struct PromptView: UIViewRepresentable {
 
+    private let textView: PromptTextView
+    private let label: UILabel
+    private let containerView: UIView
+
+    init() {
+        self.textView = PromptTextView()
+        self.label = UILabel()
+        self.containerView = UIView()
+        label.text = NSLocalizedString("ready", comment: "")
+        label.textColor = .white
+        label.font = .App.promptTitle
+    }
+
     func makeUIView(context: UIViewRepresentableContext<PromptView>) -> UIView {
-        let textView = PromptTextView()
-        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = true
 
         textView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.translatesAutoresizingMaskIntoConstraints = true
         containerView.addSubview(textView)
 
-        // we'll inset the textView by 8-points on all sides
-        //  so we can see that it's inside the container view
-
-        // avoid auto-layout error/warning messages
-        let cTrailing = textView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -64.0)
-        cTrailing.priority = .required - 1
-
-        let cBottom = textView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8.0)
-        cBottom.priority = .required - 1
-
         NSLayoutConstraint.activate([
-
             textView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8.0),
+            textView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8.0),
             textView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 64.0),
-
-            // activate trailing and bottom constraints
-            cTrailing, cBottom
-
+            textView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -64.0)
         ])
 
-        containerView.transform = CGAffineTransform(rotationAngle: (CGFloat)(Double.pi/2))
+        label.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(label)
+
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
+        ])
+
+        containerView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
+        textView.alpha = 0
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            UIView.animate(withDuration: 1.0) {
+                label.alpha = 0
+                label.text = NSLocalizedString("go", comment: "")
+                label.alpha = 1
+            }
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            UIView.animate(withDuration: 1.0) {
+                label.alpha = 0
+                textView.alpha = 1
+            }
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+            textView.startScrolling()
+        }
 
         return containerView
     }
@@ -42,7 +68,7 @@ struct PromptView: UIViewRepresentable {
 private class PromptTextView: UITextView {
 
     private var timer: Timer?
-    private var scrollSpeed: CGFloat = 1
+    private var scrollSpeed: CGFloat = 0
 
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
@@ -54,8 +80,8 @@ private class PromptTextView: UITextView {
         self.isUserInteractionEnabled = false
     }
 
-    override func didMoveToSuperview() {
-        scrollSpeed = 1
+    func startScrolling() {
+        scrollSpeed = 0
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
             self.updateScroll()
         }
@@ -76,7 +102,7 @@ private class PromptTextView: UITextView {
             self.contentOffset = newContentOffset
         }
 
-        scrollSpeed += 2
+        scrollSpeed += 1
     }
 
     required init?(coder: NSCoder) {
