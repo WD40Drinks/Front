@@ -47,11 +47,14 @@ struct GameView: View {
     }
 
     private var gameImage: some View {
-        ColoredImage(imageName: game.imageName)
-            .frame(
-                width: 0.355 * UIScreen.main.bounds.height,
-                height: 0.237 * UIScreen.main.bounds.height
-            )
+        ColoredImage(
+            colorImageURL: game.colorImageURL,
+            foregroundImageURL: game.foregroundImageURL
+        )
+        .frame(
+            width: 0.355 * UIScreen.main.bounds.height,
+            height: 0.237 * UIScreen.main.bounds.height
+        )
     }
 
     @ViewBuilder

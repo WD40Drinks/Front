@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
+    @StateObject private var viewModel = ContentViewModel<APIGameFactory>()
     @State private var presentConfiguration = false
 
     var topBar: some View {

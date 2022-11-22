@@ -16,8 +16,8 @@ struct GameToggleView: View {
     }
 }
 
-struct ConfigurationView: View {
-    @ObservedObject var viewModel: ContentViewModel<MockGameFactory>
+struct ConfigurationView<Factory: GameFactory>: View {
+    @ObservedObject var viewModel: ContentViewModel<Factory>
     @Environment(\.dismiss) var dismiss
     private let rangeOfPlayers: ClosedRange<Int> = 0...10
 
