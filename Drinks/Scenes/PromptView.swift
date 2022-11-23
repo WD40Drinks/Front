@@ -26,6 +26,7 @@ private class PromptScrollViewController: UIViewController {
     private let scrollView: UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = false
         return view
     }()
 
@@ -82,8 +83,8 @@ private class PromptScrollViewController: UIViewController {
     }
 
     func startScrolling() {
-        scrollSpeed = 10
-        self.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
+        scrollSpeed = 20
+        self.timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true) { _ in
             self.updateScroll()
         }
     }
@@ -100,7 +101,7 @@ private class PromptScrollViewController: UIViewController {
             return
         }
 
-        UIView.animate(withDuration: 0.6) {
+        UIView.animate(withDuration: 1.2) {
             self.scrollView.contentOffset = newContentOffset
         }
 

@@ -104,9 +104,19 @@ struct GameView: View {
 
     @ViewBuilder
     private var interactiveGame: some View {
-        if isShowingInteractiveGame {
-            PromptView(isShowing: $isShowingInteractiveGame)
-                .background(.black.opacity(0.9))
+        if
+            let stringToken = game.minigameToken,
+            let token = MinigameToken(rawValue: stringToken),
+            isShowingInteractiveGame
+        {
+            switch token {
+            case .prompt:
+                PromptView(isShowing: $isShowingInteractiveGame)
+                    .background(.black.opacity(0.9))
+                    .onTapGesture {
+                        withAnimation { isShowingInteractiveGame = false }
+                    }
+            }
         }
     }
 }
