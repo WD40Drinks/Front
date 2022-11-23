@@ -4,6 +4,8 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     enum State {
         case loading
         case error
+        case terms
+        case swipe
         case loaded(Factory, Game)
     }
 
@@ -18,6 +20,14 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         self.color = .red
         self.numOfPlayers = 5
         self.numOfEnabledGames = 0
+        initiateOnboarding()
+    }
+
+    func initiateOnboarding() {
+        setState(.terms)
+    }
+
+    func initiateGame() {
         createFactory()
     }
 
@@ -76,7 +86,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         setColor(.random)
     }
 
-    private func setState(_ state: State) {
+    internal func setState(_ state: State) {
         DispatchQueue.main.async {
             withAnimation { self.state = state }
         }
