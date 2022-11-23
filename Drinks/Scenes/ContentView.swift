@@ -39,6 +39,10 @@ struct ContentView: View {
         GridView(color: viewModel.color) {
             ZStack(alignment: .top) {
                 switch viewModel.state {
+                case .terms:
+                    TermsView(viewModel: viewModel)
+                case .swipe:
+                    SwipeView(viewModel: viewModel)
                 case .loaded(_, let game):
                     topBar
                     if !viewModel.isTransitioning {
@@ -63,7 +67,15 @@ struct ContentView: View {
             let didSwipeHorizontally = abs(value.translation.width) > abs(value.translation.height)
             let didSwipeLeft = value.predictedEndTranslation.width < -60
             if didSwipeHorizontally && didSwipeLeft {
-                transitionToNextGame()
+                switch viewModel.state {
+                case .swipe:
+                    viewModel.initiateGame()
+                case .loaded:
+                    transitionToNextGame()
+                default:
+                    return
+                }
+
             }
         }
     }
