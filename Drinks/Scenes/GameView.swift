@@ -105,7 +105,7 @@ struct GameView: View {
     @ViewBuilder
     private var interactiveGame: some View {
         if isShowingInteractiveGame {
-            PromptView()
+            PromptView(isShowing: $isShowingInteractiveGame)
                 .background(.black.opacity(0.9))
         }
     }
