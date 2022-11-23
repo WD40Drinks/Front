@@ -68,12 +68,9 @@ struct ContentView: View {
             let didSwipeLeft = value.predictedEndTranslation.width < -60
             if didSwipeHorizontally && didSwipeLeft {
                 switch viewModel.state {
-                case .terms:
-                    return
                 case .swipe:
                     viewModel.initiateGame()
-                    // swiftlint:disable:next empty_enum_arguments
-                case .loaded(_, _):
+                case .loaded:
                     transitionToNextGame()
                 default:
                     return
