@@ -16,15 +16,10 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     @Published var isTransitioning = false
 
     init() {
-        self.state = .loading
+        self.state = .terms
         self.color = .red
         self.numOfPlayers = 5
         self.numOfEnabledGames = 0
-        initiateOnboarding()
-    }
-
-    func initiateOnboarding() {
-        setState(.terms)
     }
 
     func initiateGame() {
