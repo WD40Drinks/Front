@@ -4,19 +4,27 @@ struct PromptView: UIViewControllerRepresentable {
 
     @Binding var isShowing: Bool
 
-    func makeUIViewController(context: Context) -> some UIViewController {
+    func makeUIViewController(context: Context) -> PromptScrollViewController {
         let viewController = PromptScrollViewController(isShowing: $isShowing)
         return viewController
     }
 
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) { }
+    func updateUIViewController(_ uiViewController: PromptScrollViewController, context: Context) {
+        if !isShowing {
+            uiViewController.timer = nil
+        }
+    }
 }
 
-private class PromptScrollViewController: UIViewController {
+class PromptScrollViewController: UIViewController {
 
     @Binding var isShowing: Bool
-    private var timer: Timer?
     private var scrollSpeed: CGFloat = 0
+    var timer: Timer? {
+        didSet {
+            oldValue?.invalidate()
+        }
+    }
 
     init(isShowing: Binding<Bool>) {
         self._isShowing = isShowing
@@ -73,7 +81,7 @@ private class PromptScrollViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             UIView.animate(withDuration: 1.0) {
                 self.readyLabel.text = NSLocalizedString("go", comment: "")
             }
@@ -96,7 +104,7 @@ private class PromptScrollViewController: UIViewController {
         )
 
         guard scrollView.contentSize.height > newContentOffset.y else {
-            self.timer?.invalidate()
+            self.timer = nil
             stopShowingGame()
             return
         }
@@ -105,7 +113,7 @@ private class PromptScrollViewController: UIViewController {
             self.scrollView.contentOffset = newContentOffset
         }
 
-        scrollSpeed += 1
+        scrollSpeed += 0.7
     }
 
     private func stopShowingGame() {

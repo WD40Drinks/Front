@@ -23,7 +23,7 @@ extension Font {
 
 extension UIFont {
     enum App {
-        static let promptTitle = UIFont(name: appFontName, size: 56)
-        static let prompt = UIFont.systemFont(ofSize: 40)
+        static let promptTitle = UIFont(name: appFontName, size: 80)
+        static let prompt = UIFont.systemFont(ofSize: 56)
     }
 }
