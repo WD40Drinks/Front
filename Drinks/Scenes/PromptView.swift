@@ -141,7 +141,7 @@ class PromptScrollViewController: UIViewController {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(
                 equalTo: scrollView.contentLayoutGuide.topAnchor,
-                constant: UIScreen.main.bounds.width / 2 - 80
+                constant: UIScreen.main.bounds.width / 2 - 100
             ),
             stackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
