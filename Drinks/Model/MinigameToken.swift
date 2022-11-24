@@ -1,5 +1,5 @@
 import SwiftUI
 
-enum MinigameToken: String {
+enum MinigameToken: String, Codable {
     case prompt
 }

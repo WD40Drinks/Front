@@ -91,7 +91,7 @@ class PromptScrollViewController: UIViewController {
     }
 
     func startScrolling() {
-        scrollSpeed = 20
+        scrollSpeed = 22
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true) { _ in
             self.updateScroll()
         }
@@ -113,7 +113,7 @@ class PromptScrollViewController: UIViewController {
             self.scrollView.contentOffset = newContentOffset
         }
 
-        scrollSpeed += 0.7
+        scrollSpeed += 0.8
     }
 
     private func stopShowingGame() {

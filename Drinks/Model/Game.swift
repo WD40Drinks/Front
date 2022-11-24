@@ -7,5 +7,5 @@ struct Game: Decodable, Equatable {
     let rules: String?
     let suggestions: [String]?
     let timer: Int?
-    let minigameToken: String?
+    let minigameToken: MinigameToken?
 }

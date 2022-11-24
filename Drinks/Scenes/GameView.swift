@@ -105,8 +105,7 @@ struct GameView: View {
     @ViewBuilder
     private var interactiveGame: some View {
         if
-            let stringToken = game.minigameToken,
-            let token = MinigameToken(rawValue: stringToken),
+            let token = game.minigameToken,
             isShowingInteractiveGame
         {
             switch token {
@@ -116,6 +115,7 @@ struct GameView: View {
                     .onTapGesture {
                         withAnimation { isShowingInteractiveGame = false }
                     }
+                    .gesture(DragGesture()) // avoid changing game while interactive is open
             }
         }
     }
