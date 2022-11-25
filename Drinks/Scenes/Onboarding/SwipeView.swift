@@ -1,8 +1,7 @@
 import SwiftUI
 
-struct SwipeView<Factory: GameFactory>: View {
+struct SwipeView: View {
     @State private var isRotating = 0.0
-    var viewModel: ContentViewModel<Factory>
 
     var body: some View {
         VStack {

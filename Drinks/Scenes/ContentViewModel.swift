@@ -6,7 +6,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         case error
         case terms
         case swipe
-        case loaded(Factory, Game)
+        case loaded(GameManager, Game)
     }
 
     @Published var state: State
@@ -15,73 +15,75 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     @Published var numOfEnabledGames: Int
     @Published var isTransitioning = false
 
+    private var factory: Factory?
+
     init() {
         self.state = .terms
-        self.color = .red
+        self.color = .yellow
         self.numOfPlayers = 5
         self.numOfEnabledGames = 0
+        Task {
+            self.factory = try await Factory()
+        }
     }
 
-    func initiateGame() {
-        createFactory()
-    }
+    //MARK: - Public
 
-    func createFactoryIfNeeded() {
+    func createManagerIfNeeded() {
         switch state {
         case .error:
-            createFactory()
+            createManager()
         default:
             return
         }
     }
 
+    /// Used when the user disables the current game in ConfigurationView
     func goToNextGameIfDisabled() {
         if
-            case .loaded(let factory, let game) = state,
-            !factory.settings.enabledGames.contains(game)
+            case .loaded(let manager, let game) = state,
+            !manager.settings.enabledGames.contains(game)
         {
             goToNextGame()
         }
     }
 
-    private func createFactory() {
-        Task {
-            guard let factory = try? await Factory() else {
-                print("DEBUG: failed creating game factory")
-                setState(.error)
-                return
-            }
-
-            DispatchQueue.main.async {
-                self.numOfEnabledGames = factory.settings.enabledGames.count
-            }
-
-            goToNextGame(factory: factory)
-        }
-    }
-
     func goToNextGame() {
         switch state {
-        case .loaded(let factory, _):
-            goToNextGame(factory: factory)
+        case .loaded(let manager, _):
+            goToNextGame(manager: manager)
+        case .swipe:
+            createManager()
         default:
             print("DEBUG: Could not go to next game in state different from loaded")
             return
         }
     }
 
-    private func goToNextGame(factory: Factory) {
-        guard let nextGame = try? factory.nextGame() else {
+    func goToTutorial() {
+        setState(.swipe)
+    }
+
+    //MARK: - Private
+
+    private func createManager() {
+        let manager = GameManager(games: factory?.games.shuffled() ?? [])
+        self.numOfEnabledGames = manager.settings.enabledGames.count
+        goToNextGame(manager: manager)
+    }
+
+    private func goToNextGame(manager: GameManager) {
+        guard let nextGame = try? manager.nextGame() else {
             print("DEBUG: Could not get next game from factory")
             setState(.error)
             return
         }
 
-        setState(.loaded(factory, nextGame))
+        setState(.loaded(manager, nextGame))
         setColor(.random)
     }
 
-    internal func setState(_ state: State) {
+    private func setState(_ state: State) {
         DispatchQueue.main.async {
             withAnimation { self.state = state }
         }

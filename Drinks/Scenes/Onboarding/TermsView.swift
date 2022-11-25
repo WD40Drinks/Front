@@ -29,7 +29,7 @@ struct TermsView<Factory: GameFactory>: View {
                         .font(.App.paragraph)
                 }
                 .onTapGesture {
-                    viewModel.setState(.swipe)
+                    viewModel.goToTutorial()
                 }
                 ZStack {
                     Image("button")
