@@ -4,13 +4,17 @@ class APIGameFactory: GameFactory {
     private(set) var games: [Game]
 
     required init() async throws {
-        let data = try await Network.shared.load("/games")
-        let games = try JSONDecoder().decode([Game].self, from: data)
+        let persistence = Persistence<Game>()
 
-        if games.isEmpty {
-            throw GameManagerError.emptyGameSource
+        do {
+            let data = try await Network.shared.load("/games")
+            persistence.saveToDisk(data)
+            let games = try JSONDecoder().decode([Game].self, from: data)
+            self.games = games
+        } catch Network.NetworkError.badRequest {
+            self.games = try persistence.loadFromDisk()
+        } catch {
+            throw error
         }
-
-        self.games = games
     }
 }

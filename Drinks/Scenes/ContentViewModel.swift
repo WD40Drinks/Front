@@ -22,12 +22,10 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         self.color = .yellow
         self.numOfPlayers = 5
         self.numOfEnabledGames = 0
-        Task {
-            self.factory = try await Factory()
-        }
+        createFactory()
     }
 
-    //MARK: - Public
+    // MARK: - Public
 
     func createManagerIfNeeded() {
         switch state {
@@ -64,7 +62,17 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
         setState(.swipe)
     }
 
-    //MARK: - Private
+    // MARK: - Private
+
+    private func createFactory() {
+        Task {
+            do {
+                self.factory = try await Factory()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 
     private func createManager() {
         let manager = GameManager(games: factory?.games.shuffled() ?? [])

@@ -2,7 +2,7 @@ import Foundation
 
 class Network {
     enum NetworkError: Error {
-        case badURL, badResponse
+        case badURL, badResponse, badRequest
     }
 
     static let shared: Network = .init()
@@ -18,7 +18,9 @@ class Network {
             throw Self.NetworkError.badURL
         }
 
-        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let (data, response) = try? await URLSession.shared.data(from: url) else {
+            throw Self.NetworkError.badRequest
+        }
 
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             throw Self.NetworkError.badResponse

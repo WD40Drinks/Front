@@ -4,7 +4,7 @@ enum Language: String {
     case pt, en
 }
 
-struct Game: Decodable, Equatable {
+struct Game: Codable, Equatable {
     static var language: Language {
         Language(rawValue: Locale.current.twoCharacterId) ?? .en
     }
