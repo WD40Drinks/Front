@@ -7,8 +7,8 @@ class GameManager {
     var settings: GameSettings
 
     init(games: [Game]) {
-        self.games = games
-        self.settings = GameSettings(games: games)
+        self.games = games.shuffled()
+        self.settings = GameSettings(games: self.games)
     }
 
     func nextGame() throws -> Game {

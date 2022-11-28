@@ -75,7 +75,20 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
     }
 
     private func createManager() {
-        let manager = GameManager(games: factory?.games.shuffled() ?? [])
+        var manager: GameManager
+        if let factory {
+            manager = .init(games: factory.games)
+        } else {
+            do {
+                let persistence = Persistence<Game>()
+                let games = try persistence.loadFromDisk()
+                manager = .init(games: games)
+            } catch {
+                print("DEBUG: Could not load games from disk")
+                setState(.error)
+                return
+            }
+        }
         self.numOfEnabledGames = manager.settings.enabledGames.count
         goToNextGame(manager: manager)
     }
