@@ -211,14 +211,14 @@
         "pt": {
             "name": "Propaganda grátis",
             "type": "desafio",
-            "text": "Tire uma foto do grupo e poste em alguma rede social que está jogando esse jogo",
+            "text": "Tire uma foto do grupo e poste em alguma rede social que vocês estão jogando esse jogo",
             "imageName": "fish1",
             "rules": null
         },
         "en": {
             "name": "Free advertising",
             "type": "desafio",
-            "text": "Take a photo of the group and post it on any social network saying that is playing this game",
+            "text": "Take a photo of the group and post it on any social network saying that you are playing this game",
             "imageName": "fish1",
             "rules": null
         }
@@ -234,7 +234,7 @@
         "en": {
             "name": "Patriot",
             "type": "desafio",
-            "text": "Sing the national anthem while performing a mesmerizing dance",
+            "text": "Sing the national anthem while performing a mesmerizing dance.",
             "imageName": "fish2",
             "rules": null
         }
@@ -275,71 +275,71 @@
         "pt": {
             "name": "VRUMMM",
             "type": "coletivo",
-            "text": "Sugestão: jogar até completar 3 erros",
+            "text": "Abra as regras. Se beber, não dirija!",
             "imageName": "glass",
-            "rules": "Os participantes podem imitar a aceleração de um carro (VRUM) para seguir para o próximo participante em ordem. Pode imitar um carro freiando (IHHH) para inverter o sentido do jogo. Ou pode imitar o barulho de lombada (PLOFT) para pular o próximo jogador. O jogador que errar bebe."
+            "rules": "Os participantes falam em sequência. Cada um pode imitar a aceleração de um carro (VRUM) para seguir para o próximo participante em ordem. Pode imitar um carro freando (IHHH) para inverter o sentido do jogo. Ou pode imitar o barulho de lombada (PLOFT) para pular o próximo jogador. O jogador que errar bebe."
         },
         "en": {
             "name": "VRUMMM",
             "type": "coletivo",
-            "text": "Suggestion: play until the group completes 3 mistakes",
+            "text": "Open the rules. Don't drink and drive!",
             "imageName": "glass",
-            "rules": "Participants can imitate the acceleration of a car (VRUM) to move on to the next participant in order. You can imitate a car braking (IHHH) to reverse the direction of the game. Or you can imitate the speed bump (PLOFT) to skip the next player. The player who misses drinks."
+            "rules": "Participants play in sequence. One can imitate the acceleration of a car (VRUM) to move on to the next participant in order. You can imitate a car braking (IHHH) to reverse the direction of the game. Or you can imitate the speed bump (PLOFT) to skip the next player. The player who misses drinks."
         }
     },
     {
         "pt": {
             "name": "Buffalo Bill",
             "type": "coletivo",
-            "text": null,
+            "text": "Abra as regras.",
             "imageName": "buffalo",
-            "rules": "Os participantes devem se organizar em roda. Cada jogador deve falar Buffalo Bill sem mostrar os dentes ou IRRA para inverter o sentido do jogo. Jogadores que mostrarem os dentes ou perderem a vez bebem."
+            "rules": "Os participantes jogam em sequência. Cada jogador deve falar Buffalo Bill sem mostrar os dentes ou IRRA para inverter o sentido do jogo. Jogadores que mostrarem os dentes ou perderem a vez bebem. Sugestão: jogar até completar 3 erros."
         },
         "en": {
             "name": "Buffalo Bill",
             "type": "coletivo",
-            "text": null,
+            "text": "Open the rules.",
             "imageName": "buffalo",
-            "rules": "Participants must organize themselves into a circle. Each player must say Buffalo Bill without showing teeth or IRRA to reverse the direction of the game. Players who show their teeth or lose their turn drink."
+            "rules": "Participants play in sequence. Each player must say Buffalo Bill without showing teeth or say IRRA to reverse the direction of the game. Players who show their teeth or lose their turn drink. Suggestion: play until the group completes 3 mistakes."
         }
     },
     {
         "pt": {
             "name": "Jogo do PI",
             "type": "coletivo",
-            "text": null,
+            "text": "Abra as regras",
             "imageName": "fish1",
-            "rules": "O jogador que tirou a carta fala o número 1. O próximo jogador fala o número seguinte (2) e assim por diante. A pegadinha é que todo múltiplo de 3 OU números com final 3 deve ser substituído pela palavra “pi”."
+            "rules": "Os participantes jogam em sequência. O primeiro jogador fala o número 1. O próximo jogador fala o número seguinte (2) e assim por diante. A pegadinha é que todo múltiplo de 3 OU números com final 3 deve ser substituído pela palavra “pi”."
         },
         "en": {
             "name": "PI Game",
             "type": "coletivo",
-            "text": null,
+            "text": "Open the rules",
             "imageName": "fish1",
-            "rules": "The player who drew the card says the number 1. The next player says the next number (2) and so on. The catch is that every multiple of 3 OR numbers ending in 3 must be replaced by the word “pi”."
+            "rules": "Participants play in sequence. The first player says 1. The next player says the next number (2) and so on. The catch is that every multiple of 3 OR numbers ending in 3 must be replaced by the word “pi”."
         }
     },
     {
         "pt": {
             "name": "CS Composto",
             "type": "coletivo",
-            "text": null,
+            "text": "Abra as regras",
             "imageName": "fish3",
-            "rules": "Os participantes se reúnem em roda e um primeiro diz uma palavra que não comece nem com C, nem com S ou que seja composta. O segundo deve falar uma palavra relacionada seguindo as mesmas regras."
+            "rules": "Os participantes jogam em sequência e o primeiro diz uma palavra que não comece nem com C, nem com S ou que seja composta. O próximo deve falar uma palavra relacionada com a última que foi dita, seguindo as mesmas regras."
         },
         "en": {
             "name": "CS Composite",
             "type": "coletivo",
-            "text": null,
+            "text": "Open the rules",
             "imageName": "fish3",
-            "rules": "The participants gather in a circle and the first one says a word that does not start with C or S or that is composed. The second must say a related word following the same rules."
+            "rules": "The participants play in sequence and the first one says a word that does not start with C or S or that is composed. The next player must say a related word following the same rules."
         }
     },
     {
         "pt": {
             "name": "Eu nunca",
             "type": "coletivo",
-            "text": null,
+            "text": "Clique no baiacu",
             "imageName": "glass",
             "rules": "O jogador deve falar a frase sugerida ou uma criação própria. Todos que já estiveram na situação descrita devem beber.",
             "suggestions": [
@@ -355,7 +355,7 @@
         "en": {
             "name": "Never Have I Ever",
             "type": "coletivo",
-            "text": null,
+            "text": "Tap the pufferfish",
             "imageName": "glass",
             "rules": "The player must say the suggested phrase or a creation of their own. Everyone who has ever been in the situation described should drink.",
             "suggestions": [
@@ -457,29 +457,61 @@
             "type": "coletivo",
             "text": null,
             "imageName": "fishes2",
-            "rules": "O jogo começa com todos repetindo jogo do salame 3 vezes. O jogador que recebeu a carta começa falando o número 1 e os outros jogadores devem ir falando os números um de cada vez, mas não na ordem da roda. Se mais de uma pessoa falar o mesmo número ao mesmo tempo, o jogo encerra e elas devem beber. Se o jogo chega até o fim, o último jogador bebe."
+            "rules": "O jogo começa com todos repetindo 'jogo do salame, jogo do salame, jogo do salame'. Qualquer jogador pode falar um número a qualquer momento, começando por 1 e subindo. Se mais de uma pessoa falar o mesmo número ao mesmo tempo, o jogo encerra e elas devem beber. Se o jogo chega até o fim, o último jogador bebe. Lembre: os números são ditos na ordem, mas não tem ordem pra saber quem fala o número."
         },
         "en": {
             "name": "Salami game",
             "type": "coletivo",
             "text": null,
             "imageName": "fishes2",
-            "rules": "The game starts with everyone replaying the salami game 3 times. The player who received the card starts by saying the number 1 and the other players must say the numbers one at a time, but not in the game order. If more than one person calls the same number at the same time, the game ends and they must drink. If the game reaches the end, the last player drinks."
+            "rules": "The game starts with everyone saying together 'salami game, salami game, salami game'. Any player can say a number at any time, starting by 1 and going up. If more than one person calls the same number at the same time, the game ends and they must drink. If the game reaches the end, the last player drinks. Remember: the numbers are said in order, but there's no order to know who's going to say the number."
         }
     },
     {
         "pt": {
             "name": "Axé Verão",
             "type": "desafio",
-            "text": "Escolha dois jogadores e dê uma aula de axé para eles.",
+            "text": "Escolha dois jogadores e dê uma aula de axé para eles",
             "imageName": "fish2",
             "rules": null
         },
         "en": {
             "name": "Teach them how to Dougie",
             "type": "desafio",
-            "text": "Choose two players to teach them how to Dougie.",
+            "text": "Choose two players to teach them how to Dougie",
             "imageName": "fish2",
+            "rules": null
+        }
+    },
+    {
+        "pt": {
+            "name": "Rodada da água",
+            "type": "comum",
+            "text": "Hidrate-se para não ficar podre",
+            "imageName": "water",
+            "rules": null
+        },
+        "en": {
+            "name": "Water time",
+            "type": "comum",
+            "text": "Hydrate to avoid the headache",
+            "imageName": "water",
+            "rules": null
+        }
+    },
+    {
+        "pt": {
+            "name": "Beba água",
+            "type": "comum",
+            "text": "Tome uma aguinha pra ficar de boa, meu bem",
+            "imageName": "water",
+            "rules": null
+        },
+        "en": {
+            "name": "Drink water",
+            "type": "comum",
+            "text": "Have water so that the fun lasts longer",
+            "imageName": "water",
             "rules": null
         }
     }
