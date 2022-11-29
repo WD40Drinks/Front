@@ -99,6 +99,7 @@ struct GameView: View {
     private var rulesModal: some View {
         if let rules = game.rules {
             RulesModalView(isOpen: $isRulesOpen, name: game.name, rules: rules)
+                .zIndex(6) // over the suggestions
         }
     }
 
