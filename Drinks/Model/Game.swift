@@ -17,7 +17,7 @@ struct Game: Codable, Equatable {
     let colorImageURL: String?
     let foregroundImageURL: String?
     let timer: Int?
-    let minigameToken: String?
+    let minigameToken: MinigameToken?
 
     private enum OuterKeys: String, CodingKey {
         case id, colorImageURL, foregroundImageURL, timer, minigameToken

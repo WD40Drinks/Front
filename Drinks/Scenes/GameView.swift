@@ -3,6 +3,7 @@ import SwiftUI
 struct GameView: View {
     @State private var isRulesOpen = false
     @State private var isShowingSuggestion = false
+    @State private var isShowingInteractiveGame = false
     let game: Game
 
     var body: some View {
@@ -20,6 +21,7 @@ struct GameView: View {
 
             suggestion
             rulesModal
+            interactiveGame
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear {
@@ -55,6 +57,9 @@ struct GameView: View {
             width: 0.355 * UIScreen.main.bounds.height,
             height: 0.237 * UIScreen.main.bounds.height
         )
+        .onTapGesture {
+            withAnimation { isShowingInteractiveGame.toggle() }
+        }
     }
 
     @ViewBuilder
@@ -97,6 +102,25 @@ struct GameView: View {
     private var rulesModal: some View {
         if let rules = game.rules {
             RulesModalView(isOpen: $isRulesOpen, name: game.name, rules: rules)
+                .zIndex(6) // over the suggestions
+        }
+    }
+
+    @ViewBuilder
+    private var interactiveGame: some View {
+        if
+            let token = game.minigameToken,
+            isShowingInteractiveGame
+        {
+            switch token {
+            case .prompt:
+                PromptView(isShowing: $isShowingInteractiveGame)
+                    .background(.black.opacity(0.9))
+                    .onTapGesture {
+                        withAnimation { isShowingInteractiveGame = false }
+                    }
+                    .gesture(DragGesture()) // avoid changing game while interactive is open
+            }
         }
     }
 }
