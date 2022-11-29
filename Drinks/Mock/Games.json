@@ -482,5 +482,23 @@
             "imageName": "fish2",
             "rules": null
         }
+    },
+    {
+        "pt": {
+            "name": "Teleprompter",
+            "type": "interativo",
+            "text": "Leia o texto conforme ele sobe. Se não conseguir acompanhar a velocidade, beba.",
+            "imageName": "play",
+            "rules": null,
+            "minigameToken": "prompt"
+        },
+        "en": {
+            "name": "Teleprompter",
+            "type": "interativo",
+            "text": "Read the text as it goes up. If you can't keep up, drink.",
+            "imageName": "play",
+            "rules": null,
+            "minigameToken": "prompt"
+        }
     }
 ]

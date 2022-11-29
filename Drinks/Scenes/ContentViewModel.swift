@@ -17,7 +17,7 @@ class ContentViewModel<Factory: GameFactory>: ObservableObject {
 
     init() {
         self.state = .loading
-        self.color = .red
+        self.color = .random
         self.numOfPlayers = 5
         self.numOfEnabledGames = 0
         initiateOnboarding()
