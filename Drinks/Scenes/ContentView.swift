@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
     @State private var presentConfiguration = false
+    @State private var isShowingInteractiveGame = false
 
     var topBar: some View {
         VStack {
@@ -46,7 +47,7 @@ struct ContentView: View {
                 case .loaded(_, let game):
                     topBar
                     if !viewModel.isTransitioning {
-                        GameView(game: game)
+                        GameView(game: game, isShowingInteractiveGame: $isShowingInteractiveGame)
                             .transition(.push(from: .trailing))
                     }
                 case .loading:
@@ -64,6 +65,7 @@ struct ContentView: View {
     private var nextGameGesture: some Gesture {
         DragGesture().onEnded { value in
             guard !viewModel.isTransitioning else { return }
+            guard !isShowingInteractiveGame else { return }
             let didSwipeHorizontally = abs(value.translation.width) > abs(value.translation.height)
             let didSwipeLeft = value.predictedEndTranslation.width < -60
             if didSwipeHorizontally && didSwipeLeft {

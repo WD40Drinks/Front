@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct GameView: View {
+    let game: Game
     @State private var isRulesOpen = false
     @State private var isShowingSuggestion = false
-    @State private var isShowingInteractiveGame = false
-    let game: Game
+    @Binding var isShowingInteractiveGame: Bool
 
     var body: some View {
         ZStack(alignment: .top) {
