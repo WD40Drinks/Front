@@ -51,7 +51,8 @@ struct GameView: View {
     private var gameImage: some View {
         ColoredImage(
             colorImageURL: game.colorImageURL,
-            foregroundImageURL: game.foregroundImageURL
+            foregroundImageURL: game.foregroundImageURL,
+            isMinigame: game.minigameToken != nil
         )
         .frame(
             width: 0.355 * UIScreen.main.bounds.height,

@@ -36,7 +36,7 @@ struct Game: Codable, Equatable {
         self.colorImageURL = try outerContainer.decodeIfPresent(String.self, forKey: .colorImageURL)
         self.foregroundImageURL = try outerContainer.decodeIfPresent(String.self, forKey: .foregroundImageURL)
         self.timer = try outerContainer.decodeIfPresent(Int.self, forKey: .timer)
-        self.minigameToken = try outerContainer.decodeIfPresent(String.self, forKey: .minigameToken)
+        self.minigameToken = try outerContainer.decodeIfPresent(MinigameToken.self, forKey: .minigameToken)
 
         switch Self.language {
         case .pt:
