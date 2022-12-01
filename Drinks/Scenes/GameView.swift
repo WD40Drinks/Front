@@ -111,8 +111,22 @@ struct GameView: View {
         {
             switch token {
             case .prompt:
-                PromptView(isShowing: $isShowingInteractiveGame)
-                    .background(.black.opacity(0.9))
+//                PromptView(isShowing: $isShowingInteractiveGame)
+//                    .background(.black.opacity(0.9))
+//                    .onTapGesture {
+//                        withAnimation { isShowingInteractiveGame = false }
+//                    }
+                WhoAmI(isShowingInteractiveGame: isShowingInteractiveGame)
+                    .rotationEffect(.degrees(-90))
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    .background(.white.opacity(1))
+                    .onTapGesture {
+                        withAnimation { isShowingInteractiveGame = false }
+                    }
+
+            case .whoAmI:
+                WhoAmI(isShowingInteractiveGame: isShowingInteractiveGame)
+                    .background(.white.opacity(0.9))
                     .onTapGesture {
                         withAnimation { isShowingInteractiveGame = false }
                     }
