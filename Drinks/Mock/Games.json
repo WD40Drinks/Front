@@ -20,14 +20,14 @@
             "name": "Amigo do peito",
             "type": "comum",
             "text": "Indique 1 pessoa para beber.",
-            "imageName": "fishes1",
+            "imageName": "peito",
             "rules": null
         },
         "en": {
             "name": "Dear friend",
             "type": "comum",
             "text": "Choose one person to drink.",
-            "imageName": "fishes1",
+            "imageName": "peito",
             "rules": null
         }
     },
@@ -52,14 +52,14 @@
             "name": "À esquerda",
             "type": "comum",
             "text": "A pessoa a sua esquerda bebe.",
-            "imageName": "glass",
+            "imageName": "esquerda",
             "rules": null
         },
         "en": {
             "name": "To the left",
             "type": "comum",
             "text": "The person to your left drinks.",
-            "imageName": "glass",
+            "imageName": "esquerda",
             "rules": null
         }
     },
@@ -68,14 +68,14 @@
             "name": "Cores",
             "type": "comum",
             "text": "Todos que estão usando as mesmas cores de roupa que você bebe.",
-            "imageName": "fish2",
+            "imageName": "cores",
             "rules": null
         },
         "en": {
             "name": "Colors",
             "type": "comum",
             "text": "Everyone who is wearing the same colors of clothes as you drink.",
-            "imageName": "fish2",
+            "imageName": "cores",
             "rules": null
         }
     },
@@ -116,14 +116,14 @@
             "name": "Contragolpe",
             "type": "comum",
             "text": "A pessoa que mais bebeu escolhe um para beber.",
-            "imageName": "fish2",
+            "imageName": "contragolpe",
             "rules": null
         },
         "en": {
             "name": "Backlash",
             "type": "comum",
             "text": "The person who drank the most chooses one to drink.",
-            "imageName": "fish2",
+            "imageName": "contragolpe",
             "rules": null
         }
     },
@@ -148,14 +148,14 @@
             "name": "Desafio da Lua",
             "type": "desafio",
             "text": "Uive para lua como se fosse um lobo.",
-            "imageName": "wolf",
+            "imageName": "moon",
             "rules": null
         },
         "en": {
             "name": "Moon challenge",
             "type": "desafio",
             "text": "Howl at the moon like a wolf.",
-            "imageName": "wolf",
+            "imageName": "moon",
             "rules": null
         }
     },
@@ -164,14 +164,14 @@
             "name": "Desafio da garrafa",
             "type": "desafio",
             "text": "Interprete o parto de um garrafa.",
-            "imageName": "bottle",
+            "imageName": "garrada",
             "rules": null
         },
         "en": {
             "name": "Bottle challenge",
             "type": "desafio",
             "text": "Interpret the childbirth of a bottle.",
-            "imageName": "bottle",
+            "imageName": "garrafa",
             "rules": null
         }
     },
@@ -196,14 +196,14 @@
             "name": "Liker",
             "type": "desafio",
             "text": "Entre em alguma rede social. No perfil do primeiro usuário que aparecer, curta 5 posts aleatórios.",
-            "imageName": "fish3",
+            "imageName": "liker",
             "rules": null
         },
         "en": {
             "name": "Liker",
             "type": "desafio",
             "text": "Enter any social network. On the profile of the first user that appears, like 5 random posts.",
-            "imageName": "fish3",
+            "imageName": "liker",
             "rules": null
         }
     },
@@ -228,14 +228,14 @@
             "name": "Patriota",
             "type": "desafio",
             "text": "Cante o hino nacional enquanto faz uma dança hipnotizante.",
-            "imageName": "fish2",
+            "imageName": "patriota",
             "rules": null
         },
         "en": {
             "name": "Patriot",
             "type": "desafio",
             "text": "Sing the national anthem while performing a mesmerizing dance.",
-            "imageName": "fish2",
+            "imageName": "patriota",
             "rules": null
         }
     },
@@ -244,14 +244,14 @@
             "name": "Dancinha do TikTok",
             "type": "desafio",
             "text": "Faça uma dancinha típica do TikTok. Cuidado com a cabeça.",
-            "imageName": "fish2",
+            "imageName": "tiktok",
             "rules": null
         },
         "en": {
             "name": "TikTok dance",
             "type": "desafio",
             "text": "Do a typical TikTok dance. Be careful with your head.",
-            "imageName": "fish2",
+            "imageName": "tiktok",
             "rules": null
         }
     },
@@ -260,14 +260,14 @@
             "name": "Língua de fora",
             "type": "desafio",
             "text": "Todos devem rir com a língua de fora até algum jogador perder.",
-            "imageName": "fish1",
+            "imageName": "lingua",
             "rules": null
         },
         "en": {
             "name": "Tongue sticking out",
             "type": "desafio",
             "text": "Everyone should laugh with their tongue out until some player loses.",
-            "imageName": "fish1",
+            "imageName": "lingua",
             "rules": null
         }
     },
@@ -308,14 +308,14 @@
             "name": "Jogo do PI",
             "type": "coletivo",
             "text": "Abra as regras",
-            "imageName": "fish1",
+            "imageName": "pi",
             "rules": "Os participantes jogam em sequência. O primeiro jogador fala o número 1. O próximo jogador fala o número seguinte (2) e assim por diante. A pegadinha é que todo múltiplo de 3 OU números com final 3 deve ser substituído pela palavra “pi”."
         },
         "en": {
             "name": "PI Game",
             "type": "coletivo",
             "text": "Open the rules",
-            "imageName": "fish1",
+            "imageName": "pi",
             "rules": "Participants play in sequence. The first player says 1. The next player says the next number (2) and so on. The catch is that every multiple of 3 OR numbers ending in 3 must be replaced by the word “pi”."
         }
     },
@@ -324,14 +324,14 @@
             "name": "CS Composto",
             "type": "coletivo",
             "text": "Abra as regras",
-            "imageName": "fish3",
+            "imageName": "cs",
             "rules": "Os participantes jogam em sequência e o primeiro diz uma palavra que não comece nem com C, nem com S ou que seja composta. O próximo deve falar uma palavra relacionada com a última que foi dita, seguindo as mesmas regras."
         },
         "en": {
             "name": "CS Composite",
             "type": "coletivo",
             "text": "Open the rules",
-            "imageName": "fish3",
+            "imageName": "cs",
             "rules": "The participants play in sequence and the first one says a word that does not start with C or S or that is composed. The next player must say a related word following the same rules."
         }
     },
@@ -340,7 +340,7 @@
             "name": "Eu nunca",
             "type": "coletivo",
             "text": "Clique no baiacu",
-            "imageName": "glass",
+            "imageName": "eununca",
             "rules": "O jogador deve falar a frase sugerida ou uma criação própria. Todos que já estiveram na situação descrita devem beber.",
             "suggestions": [
                 "... levei um tapa no rosto",
@@ -356,7 +356,7 @@
             "name": "Never Have I Ever",
             "type": "coletivo",
             "text": "Tap the pufferfish",
-            "imageName": "glass",
+            "imageName": "eununca",
             "rules": "The player must say the suggested phrase or a creation of their own. Everyone who has ever been in the situation described should drink.",
             "suggestions": [
                 "... got slapped in the face",
@@ -374,14 +374,14 @@
             "name": "SEM RISADINHA",
             "type": "regra",
             "text": "É PROIBIDO RIR. O jogo segue e o primeiro jogador a rir perde.",
-            "imageName": "fish1",
+            "imageName": "risadinha",
             "rules": null
         },
         "en": {
             "name": "NO LAUGHTER",
             "type": "regra",
             "text": "LAUGHING IS FORBIDDEN. The game goes on and the first player to laugh loses.",
-            "imageName": "fish1",
+            "imageName": "risadinha",
             "rules": null
         }
     },
@@ -390,7 +390,7 @@
             "name": "Cria regra",
             "type": "comum",
             "text": "Crie uma regra que deve valer por toda uma rodada.",
-            "imageName": "fish2",
+            "imageName": "regra",
             "rules": null,
             "suggestions": [
                 "Sempre que alguém beber, os do lado bebem",
@@ -406,7 +406,7 @@
             "name": "Create rule",
             "type": "comum",
             "text": "Create a rule that must be valid for an entire round.",
-            "imageName": "fish2",
+            "imageName": "regra",
             "rules": null,
             "suggestions": [
                 "When one drinks, the ones beside them drink",
@@ -440,14 +440,14 @@
             "name": "Palavra cantada",
             "type": "regra",
             "text": "Todos os jogadores devem falar cantando até o primeiro jogador errar.",
-            "imageName": "glass",
+            "imageName": "cantada",
             "rules": null
         },
         "en": {
             "name": "Singing",
             "type": "regra",
             "text": "All players must speak singing until the first player misses.",
-            "imageName": "glass",
+            "imageName": "cantada",
             "rules": null
         }
     },
@@ -456,14 +456,14 @@
             "name": "Jogo do Salame",
             "type": "coletivo",
             "text": null,
-            "imageName": "fishes2",
+            "imageName": "salami",
             "rules": "O jogo começa com todos repetindo 'jogo do salame, jogo do salame, jogo do salame'. Qualquer jogador pode falar um número a qualquer momento, começando por 1 e subindo. Se mais de uma pessoa falar o mesmo número ao mesmo tempo, o jogo encerra e elas devem beber. Se o jogo chega até o fim, o último jogador bebe. Lembre: os números são ditos na ordem, mas não tem ordem pra saber quem fala o número."
         },
         "en": {
             "name": "Salami game",
             "type": "coletivo",
             "text": null,
-            "imageName": "fishes2",
+            "imageName": "salami",
             "rules": "The game starts with everyone saying together 'salami game, salami game, salami game'. Any player can say a number at any time, starting by 1 and going up. If more than one person calls the same number at the same time, the game ends and they must drink. If the game reaches the end, the last player drinks. Remember: the numbers are said in order, but there's no order to know who's going to say the number."
         }
     },
