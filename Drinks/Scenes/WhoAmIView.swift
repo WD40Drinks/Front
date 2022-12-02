@@ -19,16 +19,22 @@ struct WhoAmI: View {
     @State private var timeToStart = 5
     @State private var timeRemaining = 10
     @State private var gameState: WhoAmIStates = .starting
+    var frameWidth: Double
+    var frameHeight: Double
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
-        switch gameState {
-        case .starting:
-            startingView
-        case .started:
-            startedView
+        ZStack {
+
+            switch gameState {
+            case .starting:
+                startingView
+            case .started:
+                startedView
+            }
         }
+        .frame(width: frameHeight, height: frameWidth)
     }
 
     private var startingView: some View {
@@ -78,7 +84,7 @@ struct WhoAmI: View {
             if timeRemaining > 0 {
                 timeRemaining -= 1
             } else if timeRemaining == 0 {
-                isShowingInteractiveGame = false
+//                isShowingInteractiveGame = false
             }
         }
     }

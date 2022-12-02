@@ -7,26 +7,27 @@ struct GameView: View {
     @Binding var isShowingInteractiveGame: Bool
 
     var body: some View {
-        ZStack(alignment: .top) {
-            VStack(spacing: 0) {
-                Spacer()
-                gameName
-                Spacer()
-                gameText
-                gameImage
-                Spacer()
-                Spacer()
-                openRulesIndicator
+        GeometryReader { geometry in
+            ZStack(alignment: .top) {
+                VStack(spacing: 0) {
+                    Spacer()
+                    gameName
+                    Spacer()
+                    gameText
+                    gameImage
+                    Spacer()
+                    Spacer()
+                    openRulesIndicator
+                }
+                suggestion
+                rulesModal
+                interactiveGame(frameWidth: geometry.size.width, frameHeight: geometry.size.height)
             }
-
-            suggestion
-            rulesModal
-            interactiveGame
+            .onAppear {
+                withAnimation { isShowingSuggestion = true }
+            }
         }
         .edgesIgnoringSafeArea(.all)
-        .onAppear {
-            withAnimation { isShowingSuggestion = true }
-        }
     }
 
     private var gameName: some View {
@@ -103,7 +104,7 @@ struct GameView: View {
     }
 
     @ViewBuilder
-    private var interactiveGame: some View {
+    private func interactiveGame(frameWidth: Double, frameHeight: Double) -> some View {
         if
             let stringToken = game.minigameToken,
             let token = MinigameToken(rawValue: stringToken),
@@ -116,7 +117,7 @@ struct GameView: View {
 //                    .onTapGesture {
 //                        withAnimation { isShowingInteractiveGame = false }
 //                    }
-                WhoAmI(isShowingInteractiveGame: isShowingInteractiveGame)
+                WhoAmI(isShowingInteractiveGame: isShowingInteractiveGame, frameWidth: frameWidth, frameHeight: frameHeight)
                     .rotationEffect(.degrees(-90))
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                     .background(.white.opacity(1))
@@ -125,7 +126,7 @@ struct GameView: View {
                     }
 
             case .whoAmI:
-                WhoAmI(isShowingInteractiveGame: isShowingInteractiveGame)
+                WhoAmI(isShowingInteractiveGame: isShowingInteractiveGame, frameWidth: frameWidth, frameHeight: frameHeight)
                     .background(.white.opacity(0.9))
                     .onTapGesture {
                         withAnimation { isShowingInteractiveGame = false }
