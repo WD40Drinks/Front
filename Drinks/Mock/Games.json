@@ -4,14 +4,14 @@
             "name": "Natalício",
             "type": "comum",
             "text": "Todos que nasceram no mesmo dia do mês, no mês ou no ano do jogador bebem.",
-            "imageName": "fish3",
+            "imageName": "natalicio",
             "rules": null
         },
         "en": {
             "name": "Born this date",
             "type": "comum",
             "text": "Everyone born on the same day of the month, month or year as the player drinks.",
-            "imageName": "fish3",
+            "imageName": "natalicio",
             "rules": null
         }
     },
@@ -36,14 +36,14 @@
             "name": "Amigos do peito",
             "type": "comum",
             "text": "Indique 2 pessoas para beber.",
-            "imageName": "fishes2",
+            "imageName": "peito",
             "rules": null
         },
         "en": {
             "name": "Dear friends",
             "type": "comum",
             "text": "Choose two people to drink.",
-            "imageName": "fishes2",
+            "imageName": "peito",
             "rules": null
         }
     },
@@ -84,14 +84,14 @@
             "name": "Decisão popular",
             "type": "comum",
             "text": "Em consenso com o grupo, escolham uma pessoa para beber.",
-            "imageName": "fishes2",
+            "imageName": "popular",
             "rules": null
         },
         "en": {
             "name": "Popular decision",
             "type": "comum",
             "text": "In agreement with the group, choose a person to drink.",
-            "imageName": "fishes2",
+            "imageName": "popular",
             "rules": null
         }
     },
@@ -100,14 +100,14 @@
             "name": "Bebe",
             "type": "comum",
             "text": "O jogador bebe.",
-            "imageName": "glass",
+            "imageName": "bebe",
             "rules": null
         },
         "en": {
             "name": "Drink",
             "type": "comum",
             "text": "The player drinks.",
-            "imageName": "glass",
+            "imageName": "bebe",
             "rules": null
         }
     },
@@ -132,14 +132,14 @@
             "name": "Vínculo",
             "type": "comum",
             "text": "Associe duas pessoas para que, sempre que uma beber, a outra também deve beber. Definam quanto tempo durará.",
-            "imageName": "fishes1",
+            "imageName": "vinculo",
             "rules": null
         },
         "en": {
             "name": "Bond",
             "type": "comum",
             "text": "Associate two people so that whenever one drinks, the other should also drink. Set how long it will last.",
-            "imageName": "fishes1",
+            "imageName": "vinculo",
             "rules": null
         }
     },
@@ -164,7 +164,7 @@
             "name": "Desafio da garrafa",
             "type": "desafio",
             "text": "Interprete o parto de um garrafa.",
-            "imageName": "garrada",
+            "imageName": "garrafa",
             "rules": null
         },
         "en": {
@@ -180,14 +180,14 @@
             "name": "Desafio da bofetada",
             "type": "desafio",
             "text": "Com o auxílio de um amigo, interprete um belo e dramático tapa cenográfico.",
-            "imageName": "fish1",
+            "imageName": "bofetada",
             "rules": null
         },
         "en": {
             "name": "Slap challenge",
             "type": "desafio",
             "text": "With the help of a friend, play a beautiful and dramatic scenographic slap.",
-            "imageName": "fish1",
+            "imageName": "bofetada",
             "rules": null
         }
     },
@@ -212,14 +212,14 @@
             "name": "Propaganda grátis",
             "type": "desafio",
             "text": "Tire uma foto do grupo e poste em alguma rede social que vocês estão jogando esse jogo",
-            "imageName": "fish1",
+            "imageName": "propaganda",
             "rules": null
         },
         "en": {
             "name": "Free advertising",
             "type": "desafio",
             "text": "Take a photo of the group and post it on any social network saying that you are playing this game",
-            "imageName": "fish1",
+            "imageName": "propaganda",
             "rules": null
         }
     },
@@ -276,14 +276,14 @@
             "name": "VRUMMM",
             "type": "coletivo",
             "text": "Abra as regras. Se beber, não dirija!",
-            "imageName": "glass",
+            "imageName": "vrum",
             "rules": "Os participantes falam em sequência. Cada um pode imitar a aceleração de um carro (VRUM) para seguir para o próximo participante em ordem. Pode imitar um carro freando (IHHH) para inverter o sentido do jogo. Ou pode imitar o barulho de lombada (PLOFT) para pular o próximo jogador. O jogador que errar bebe."
         },
         "en": {
             "name": "VRUMMM",
             "type": "coletivo",
             "text": "Open the rules. Don't drink and drive!",
-            "imageName": "glass",
+            "imageName": "vrum",
             "rules": "Participants play in sequence. One can imitate the acceleration of a car (VRUM) to move on to the next participant in order. You can imitate a car braking (IHHH) to reverse the direction of the game. Or you can imitate the speed bump (PLOFT) to skip the next player. The player who misses drinks."
         }
     },
@@ -424,14 +424,14 @@
             "name": "Remove regra",
             "type": "comum",
             "text": "Remova uma regra que foi criada.",
-            "imageName": "fish1",
+            "imageName": "removeregra",
             "rules": null
         },
         "en": {
             "name": "Remove rule",
             "type": "comum",
             "text": "Remove a rule that was created.",
-            "imageName": "fish1",
+            "imageName": "removeregra",
             "rules": null
         }
     },
@@ -472,14 +472,14 @@
             "name": "Axé Verão",
             "type": "desafio",
             "text": "Escolha dois jogadores e dê uma aula de axé para eles",
-            "imageName": "fish2",
+            "imageName": "axe",
             "rules": null
         },
         "en": {
             "name": "Teach them how to Dougie",
             "type": "desafio",
             "text": "Choose two players to teach them how to Dougie",
-            "imageName": "fish2",
+            "imageName": "axe",
             "rules": null
         }
     },
