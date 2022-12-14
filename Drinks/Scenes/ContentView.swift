@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ContentViewModel<MockGameFactory>()
+    @StateObject private var viewModel = ContentViewModel<APIGameFactory>()
     @State private var presentConfiguration = false
 
     var topBar: some View {
@@ -42,7 +42,7 @@ struct ContentView: View {
                 case .terms:
                     TermsView(viewModel: viewModel)
                 case .swipe:
-                    SwipeView(viewModel: viewModel)
+                    SwipeView()
                 case .loaded(_, let game):
                     topBar
                     if !viewModel.isTransitioning {
@@ -52,7 +52,7 @@ struct ContentView: View {
                 case .loading:
                     ProgressView()
                 case .error:
-                    ErrorView(tryAgainButtonAction: viewModel.createFactoryIfNeeded)
+                    ErrorView(tryAgainButtonAction: viewModel.createManagerIfNeeded)
                 }
             }
 
@@ -69,13 +69,12 @@ struct ContentView: View {
             if didSwipeHorizontally && didSwipeLeft {
                 switch viewModel.state {
                 case .swipe:
-                    viewModel.initiateGame()
+                    viewModel.goToNextGame()
                 case .loaded:
                     transitionToNextGame()
                 default:
                     return
                 }
-
             }
         }
     }

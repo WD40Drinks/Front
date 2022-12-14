@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct TermsView: View {
+struct TermsView<Factory: GameFactory>: View {
     @State private var showingTermsSheet = false
-    var viewModel: ContentViewModel<MockGameFactory>
+    var viewModel: ContentViewModel<Factory>
 
     var body: some View {
         VStack {
@@ -29,7 +29,7 @@ struct TermsView: View {
                         .font(.App.paragraph)
                 }
                 .onTapGesture {
-                    viewModel.setState(.swipe)
+                    viewModel.goToTutorial()
                 }
                 ZStack {
                     Image("button")

@@ -49,14 +49,18 @@ struct GameView: View {
     }
 
     private var gameImage: some View {
-        ColoredImage(imageName: game.imageName)
-            .frame(
-                width: 0.355 * UIScreen.main.bounds.height,
-                height: 0.237 * UIScreen.main.bounds.height
-            )
-            .onTapGesture {
-                withAnimation { isShowingInteractiveGame.toggle() }
-            }
+        ColoredImage(
+            colorImageURL: game.colorImageURL,
+            foregroundImageURL: game.foregroundImageURL,
+            isMinigame: game.minigameToken != nil
+        )
+        .frame(
+            width: 0.355 * UIScreen.main.bounds.height,
+            height: 0.237 * UIScreen.main.bounds.height
+        )
+        .onTapGesture {
+            withAnimation { isShowingInteractiveGame.toggle() }
+        }
     }
 
     @ViewBuilder

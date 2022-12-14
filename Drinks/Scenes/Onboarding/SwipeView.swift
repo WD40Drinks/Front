@@ -2,7 +2,6 @@ import SwiftUI
 
 struct SwipeView: View {
     @State private var isRotating = 0.0
-    var viewModel: ContentViewModel<MockGameFactory>
 
     var body: some View {
         VStack {
